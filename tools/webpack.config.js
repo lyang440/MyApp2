@@ -1,12 +1,3 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import path from 'path';
 import webpack from 'webpack';
 import extend from 'extend';
@@ -68,7 +59,6 @@ const config = {
       {
         test: /\.jsx?$/,
         include: [
-          path.resolve(__dirname, '../node_modules/react-routing/src'),
           path.resolve(__dirname, '../src'),
         ],
         loader: 'babel-loader',
@@ -142,42 +132,4 @@ const clientConfig = extend(true, {}, config, {
   ],
 });
 
-//
-// Configuration for the server-side bundle (server.js)
-// -----------------------------------------------------------------------------
-
-const serverConfig = extend(true, {}, config, {
-  entry: './src/server.js',
-  output: {
-    path: './build',
-    filename: 'server.js',
-    libraryTarget: 'commonjs2',
-  },
-  target: 'node',
-  externals: [
-    /^\.\/assets$/,
-    function filter(context, request, cb) {
-      const isExternal =
-        request.match(/^[@a-z][a-z\/\.\-0-9]*$/i) &&
-        !request.match(/^react-routing/) &&
-        !context.match(/[\\/]react-routing/);
-      cb(null, Boolean(isExternal));
-    },
-  ],
-  node: {
-    console: false,
-    global: false,
-    process: false,
-    Buffer: false,
-    __filename: false,
-    __dirname: false,
-  },
-  devtool: 'source-map',
-  plugins: [
-    new webpack.DefinePlugin(GLOBALS),
-    new webpack.BannerPlugin('require("source-map-support").install();',
-      { raw: true, entryOnly: false }),
-  ],
-});
-
-export default [clientConfig, serverConfig];
+export default [clientConfig];

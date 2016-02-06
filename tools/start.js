@@ -84,7 +84,7 @@ async function start() {
           const bs = Browsersync.create();
           bs.init({
             proxy: {
-              target: host,
+              target: '127.0.0.1:8000',
               middleware: [wpMiddleware, ...hotMiddlewares],
             },
 

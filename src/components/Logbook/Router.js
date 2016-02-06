@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, hashHistory } from 'react-router';
 import Main from './Main';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './master.scss';
+// import withStyles from 'isomorphic-style-loader/lib/withStyles';
+// import s from './master.scss';
 
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
 
@@ -25,4 +25,5 @@ const DOM = React.createClass({
 });
 
 
-export default withStyles(DOM, s);
+// export default withStyles(DOM, s);
+export default DOM;
