@@ -5,16 +5,5 @@
     "__DEV__": true
   },
   "rules": {
-    "quotes":0,
-    "object-curly-spacing":0,
-    "arrow-spacing":0,
-    "react/jsx-quotes": 0,
-    "react/jsx-indent-props": 0,
-    "prefer-template":0,
-    "jsx-quotes": [2, "prefer-double"],
-    "react/prefer-es6-class": 0,
-    "max-len":0,
-    "space-before-blocks":0,
-    "camelcase":0
   }
 }
