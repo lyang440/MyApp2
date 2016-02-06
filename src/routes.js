@@ -18,6 +18,7 @@ import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 import Hello from './components/Hello';
+import LogBook from './components/Logbook';
 
 const router_old = new Router(on => {
   on('*', async (state, next) => {
@@ -49,7 +50,7 @@ const router = new Router(on=>{
     return component && <App context={state.context}>{component}</App>;
   });
 
-  on('/',async ()=><Hello/>);
+  on('/',async ()=><LogBook/>);
 });
 
 export default router;

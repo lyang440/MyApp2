@@ -10,7 +10,7 @@ const sleep = (ms)=>new Promise((resolve, reject)=> {
   setTimeout(()=> {
     resolve(null)
   }, ms)
-})
+});
 
 class Hello extends Component {
   constructor(props) {
@@ -18,27 +18,27 @@ class Hello extends Component {
     this.state = {cnt: 0};
   }
 
-  tick = ()=> {
+  tick = () => {
     this.setState({cnt: this.state.cnt + 1});
   };
 
+  keyDown = (event)=> {
+    console.log(event);
+    this.tick();
+  };
+
   componentDidMount() {
-    var self = this;
-    const run = async ()=> {
-      for (var i = 0; i < 100; i++) {
-        await   sleep(100);
-        this.tick()
-      }
-    };
-    run()
+    this.refs.h1.focus();
   }
 
   render() {
     return (
-      <h1>cntaa:{this.state.cnt}</h1>
+      <h1 ref="h1" tabIndex="0" onClick={this.keyDown} onKeyPress={this.keyDown} onKeyDown={this.keyDown}>
+        cntaa:{this.state.cnt}</h1>
     );
   }
 
 }
+
 
 export default withStyles(Hello, s);
