@@ -2,10 +2,10 @@ import fs from 'fs';
 import Promise from 'bluebird';
 import assert from 'assert';
 
-var glob = Promise.promisify(require("glob"));
+const glob = Promise.promisify(require("glob"));
 
 async function replace() {
-  let files = await glob("./build/public/main.*.js");
+  let files = await glob("./build/public/main*.js");
   assert.equal(files.length, 1);
   let data = fs.readFileSync('./src/public/index.html', 'utf8');
   let file = files[0];

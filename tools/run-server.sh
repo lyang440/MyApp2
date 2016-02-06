@@ -1,1 +1,1 @@
-devd build/
+devd build/public/
