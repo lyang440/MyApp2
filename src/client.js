@@ -26,21 +26,9 @@ const context = {
   },
 };
 
-let Con = React.createClass({
-  contextTypes: {
-      insertCss: React.PropTypes.func.isRequired,
-      onSetTitle: React.PropTypes.func.isRequired,
-      onSetMeta: React.PropTypes.func.isRequired,
-  },
-  render(){
-    return <WithContext context={context}>
-          <DOM/>
-        </WithContext>;
-  }
-})
+ReactDOM.render(<WithContext context={context}><DOM/></WithContext>, appContainer);
+
 
 window.React = React;
 window.ReactDOM = ReactDOM;
-ReactDOM.render(<Con/>, appContainer);
-
 
