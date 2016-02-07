@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './Main.scss';
+import Content from './Content.jade';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+
 
 const Main = React.createClass({
   render() {
-    return <h1 className={styles.h} >hello world</h1>;
+    return <div className={styles.root} >
+      <Content/>
+          </div>;
   },
 });
 
