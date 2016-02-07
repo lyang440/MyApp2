@@ -1,0 +1,36 @@
+
+// react: main
+.row
+  .col-md-4
+    .panel.panel-card.t1
+      .panel-body
+        table.table.table-condensed.table-hover
+          thead
+            tr
+              th 基本信息
+              th
+          tbody
+            tr
+              td 服务标识
+              td=json.appUri
+            tr
+              td 提供者
+              td 官方
+            tr
+              td 模板名称
+              td=tplName
+            tr
+              td 版本
+              td=json.specVer
+  .col-md-8
+    .panel.panel-card.t1
+      .panel-body
+        table.table.table-condensed.table-hover
+          thead
+            tr
+              th 服务名称
+              th 内网域名
+              th IP
+              th 端口协议
+          tbody
+            =Tbody

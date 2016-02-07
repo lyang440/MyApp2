@@ -1,0 +1,17 @@
+.root{
+  :global{
+    .panel{
+      background-color:#fff;
+      border:1px solid transparent;
+      border-radius:2px;
+    }
+    .panel-card.t1{
+      box-shadow:0 2px 4px rgba(0,0,0,0.2);
+    }
+    .panel-body{
+      padding:30px;
+      background-color: #fff;
+      margin: 0;
+    }
+  }
+}
