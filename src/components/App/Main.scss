@@ -1,5 +1,42 @@
+// .root {
+//   flex-grow: 1;
+//   display: flex;
+//   overflow: hidden;
+//   background-color: #00A000;
+// }
+
+// .left_area {
+//   overflow: hidden;
+//   display: flex;
+//   flex-shrink: 0;
+//   // flex-basis: 300px;
+//   width: 50px;
+//   height: 1000px;
+//   background-color: red;
+// }
+// .top_area {
+//   flex-grow: 1;
+//   flex-direction: column;
+//   display: flex;
+//   height:30px;
+//   widows: 1000px;
+// }
+// .right_area {
+
+// }
+
+// .aa{
+//   background-color: red;
+// }
+
+
+// .ddd{
+//   background-color: red;
+// }
 .root{
-
-
-
+  :global{
+    .ddd{
+    background-color: red;
+    }
+  }
 }
