@@ -4,36 +4,7 @@ import jade from './AppPortalInfo.jade';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import _ from 'lodash';
 
-const data = {
-  "code": 200,
-  "data": {
-    "title": "standalone",
-    "appUri": "wangkechun.standalone",
-    "specUri": "qcos-vendor.mysql-standalone",
-    "specVer": 1,
-    "status": 2,
-    "exports": {
-      "standalone.base-portal-1": {
-        "address": "172.16.7.16",
-        "proto": 6
-      },
-      "standalone.mongo-express-1": {
-        "address": "172.16.7.1",
-        "proto": 6
-      },
-      "standalone.mongo-standalone-1": {
-        "address": "172.16.7.7",
-        "proto": 6
-      },
-      "standalone.mysql-standalone-1": {
-        "address": "172.16.7.220",
-        "proto": 6
-      }
-    },
-    "parentUri": "",
-    "vendorUri": ""
-  }
-};
+const data = require('data.json');
 
 const AppPortalInfo = React.createClass({
   propTypes: {
