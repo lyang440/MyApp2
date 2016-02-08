@@ -1,24 +1,24 @@
-.root{
-  :global{
-    .snake_game{
-      header{
-        margin:20px auto;
-        padding:0 43%;
+.root {
+  :global {
+    .snake_game {
+      header {
+        margin: 20px auto;
+        padding: 0 43%;
         font-size: 30px;
         font-weight: 600;
       }
-      .game_body{
-        width:600px;
+      .game_body {
+        width: 600px;
         height: 600px;
         background: #222;
-        margin:auto;
+        margin: auto;
         .cell {
-          width:30px;
+          width: 30px;
           height: 30px;
           float: left;
           display: inline;
         }
-        .food_cell{
+        .food_cell {
           background: #0b3;
           border-radius: 15px;
           box-shadow: 0 0 5px #0b3;
@@ -26,28 +26,28 @@
           margin: 3px;
           width: 24px;
         }
-        .snake_cell{
+        .snake_cell {
           background: #39c;
           box-shadow: 0 0 5px #39c;
         }
       }
-      .game_over{
+      .game_over {
         z-index: 2;
         position: fixed;
-        left:43%;
-        top:50%;
-        padding:10px;
+        left: 43%;
+        top: 50%;
+        padding: 10px;
         font-size: 30px;
-        background: rgba(215,212,202,0.56);
+        background: rgba(215, 212, 202, 0.56);
       }
-      button{
+      button {
         z-index: 2;
         position: fixed;
-        left:47%;
-        top:75%;
-        padding:4px;
+        left: 47%;
+        top: 75%;
+        padding: 4px;
         font-size: 28px;
-        background: rgba(215,212,202,2.56);
+        background: rgba(215, 212, 202, 2.56);
       }
     }
 
