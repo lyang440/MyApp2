@@ -36,6 +36,9 @@ const data = {
 };
 
 const AppPortalInfo = React.createClass({
+  propTypes: {
+    json: React.PropTypes.number,
+  },
   render() {
     const json = this.props.json ? this.props.json : data.data;
     const Tbody = _.map(json.exports, (v, k) => (
@@ -47,8 +50,8 @@ const AppPortalInfo = React.createClass({
         </tr>
       ));
     const tplName = _.last(json.specUri.split('.'));
-    return <div className={css.root}> {jade.main({json, Tbody, tplName})} </div>;
+    return <div className={css.root}> {jade.main({ json, Tbody, tplName })} </div>;
   },
 });
 
-export default AppPortalInfo;
+export default withStyles(AppPortalInfo, css);

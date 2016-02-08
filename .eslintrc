@@ -5,5 +5,8 @@
     "__DEV__": true
   },
   "rules": {
+    "react/jsx-quotes": 0,
+    "react/prefer-es6-class":0,
+    "jsx-quotes": [2, "prefer-double"]
   }
 }

@@ -7,9 +7,11 @@ import Snake from '../Snake';
 
 const Main = React.createClass({
   render() {
-    return <div>
+    return (
+      <div>
       <Snake/>
-      </div>;
+      </div>
+    );
   },
 });
 
