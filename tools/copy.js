@@ -32,6 +32,13 @@ async function copy({ watch } = {}) {
       const relPath = file.substr(path.join(__dirname, '../src/content/').length);
       await ncp(`src/content/${relPath}`, `build/content/${relPath}`);
     });
+    const watcher2 = await new Promise((resolve, reject) => {
+      gaze('src/public/**/*.*', (err, val) => err ? reject(err) : resolve(val));
+    });
+    watcher2.on('changed', async (file) => {
+      const relPath = file.substr(path.join(__dirname, '../src/public/').length);
+      await ncp(`src/public/${relPath}`, `build/public/${relPath}`);
+    });
   }
 }
 
