@@ -7,8 +7,8 @@ import _ from 'lodash';
 
 var numRows = 20;
 var numCols = 20;
-var de_x = [-1, +1, 0, 0];
-var de_y = [0, 0, -1, +1];
+var de_x = [9, -1, +1, 0, 0];
+var de_y = [9, 0, 0, -1, +1];
 
 function css_display(value) {
     if (value) {
@@ -81,20 +81,17 @@ const Main = React.createClass({
         },
         keyDown(event)
         {
-            console.log(event);
+            console.log(event.nativeEvent, event.nativeEvent.keyIdentifier, event.nativeEvent.keyCode);
             var de = this.state.de;
             var code = event.nativeEvent.keyCode;
-            //console.log(code);
             if (code == 38) {
-                de = 0;
-            } else if (code == 40) {
                 de = 1;
-            } else if (code == 37) {
+            } else if (code == 40) {
                 de = 2;
-            } else if (code == 39) {
+            } else if (code == 37) {
                 de = 3;
-            } else {
-                console.log('unknow key',code)
+            } else if (code == 39) {
+                de = 4;
             }
             this.nextDe = de;
         },
