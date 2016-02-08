@@ -1,0 +1,6 @@
+{
+  "name": "Snake",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Snake.js"
+}

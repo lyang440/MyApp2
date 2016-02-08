@@ -3,12 +3,12 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import _ from 'lodash';
 import AppPortalInfo from '../AppPortalInfo';
 import AppPortalHead from '../AppPortalHead';
+import Snake from '../Snake';
 
 const Main = React.createClass({
   render() {
     return <div>
-      <AppPortalHead/>
-      <AppPortalInfo/>
+      <Snake/>
       </div>;
   },
 });
