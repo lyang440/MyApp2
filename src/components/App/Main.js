@@ -10,7 +10,7 @@ const Main = React.createClass({
   render() {
     return (
       <div>
-      <Hello/>
+      <Snake/>
       </div>
     );
   },

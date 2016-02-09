@@ -16,14 +16,6 @@ async function copy({ watch } = {}) {
     ncp('package.json', 'build/package.json'),
   ]);
 
-  replace({
-    regex: '"start".*',
-    replacement: '"start": "node server.js"',
-    paths: ['build/package.json'],
-    recursive: false,
-    silent: false,
-  });
-
   if (watch) {
     const watcher = await new Promise((resolve, reject) => {
       gaze('src/content/**/*.*', (err, val) => err ? reject(err) : resolve(val));

@@ -84,7 +84,7 @@ const config = {
         loader: 'file-loader',
       }, {
         test: /\.jade$/,
-        loader: "react-jade-loader?split=true",
+        loader: "wkc-react-jade-loader?split=true",
       },
     ],
   },
