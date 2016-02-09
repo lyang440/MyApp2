@@ -1,9 +1,41 @@
 
 // react: main
 .flex.main
-  .flex.sidebar sidebar
+  .flex.sidebar
+    .logo
+      a
+        img(src='https://portal.qiniu.com/static/images/logo.svg')
+    .add
+      .btn.btn-primary.btn-emphasis +
+    .resource
+      ul
+        li: a: img(src='https://portal.qiniu.com/static/images/icon_kodo.svg')
+        li: a: img(src='https://portal.qiniu.com/static/images/icon_kodo.svg')
+        li: a: img(src='https://portal.qiniu.com/static/images/icon_kodo.svg')
   .flex.right
-    .flex.head head
+    .flex.head
+      ul
+        li
+          a
+            i.fa.fa-backward
+            | 用回旧版
+        li
+          a
+            i.fa.fa-backward
+            | 财务中心
+        li
+          a
+            i.fa.fa-backward
+            | 我的工单
+        li
+          a
+            i.fa.fa-backward
+            | 消息提醒
+        li
+          a
+            | wangkechun@qiniu.com
+            i.fa.fa-backward
+
     .flex.content
       p this is long test
       p this is long test
