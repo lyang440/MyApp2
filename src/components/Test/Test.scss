@@ -1,0 +1,47 @@
+.root {
+  border: solid red 1px;
+  width: 100%;
+  height: 100%;
+  :global {
+    .flex {
+      display: flex;
+    }
+    .main {
+      width: 100%;
+      height: 100%;
+    }
+    .sidebar {
+      width: 60px;
+    }
+    .right {
+      flex: 1;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .head {
+      height: 61px;
+      flex-basis: 61px;
+    }
+    .content{
+      position: relative;
+      overflow: auto;
+      flex-grow: 1;
+      flex-direction: row;
+    }
+  }
+}
+
+:global {
+  body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+  }
+  #Main, #app {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -5,12 +5,13 @@ import AppPortalInfo from '../AppPortalInfo';
 import AppPortalHead from '../AppPortalHead';
 import Snake from '../Snake';
 import Hello from '../Hello';
+import Test from '../Test';
 
 const Main = React.createClass({
   render() {
     return (
-      <div>
-      <Snake/>
+      <div id="Main">
+      <Test/>
       </div>
     );
   },
