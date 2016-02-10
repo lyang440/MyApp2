@@ -41,6 +41,9 @@
                 border-radius: 4px;
               }
             }
+            i {
+              padding-right: 5px;
+            }
             img {
               width: 16px;
             }
@@ -54,24 +57,26 @@
         .head {
           height: 61px;
           right: 0;
-          ul{
+          ul {
             list-style: none;
             margin: 0;
-            li{
+            li {
               display: block;
               float: left;
               position: relative;
-              a{
-                height: 60px;
-                line-height: 20px;
-                padding: 20px 15px;
-                font-size: 14px;
-                display: block;
-                position: relative;
-                color: #666180;
-              }
-            }
 
+            }
+            a {
+              height: 60px;
+              line-height: 20px;
+              padding: 20px 15px;
+              font-size: 14px;
+              display: block;
+              color: #666180;
+            }
+            i {
+              padding-right: 5px;
+            }
           }
         }
         .content {

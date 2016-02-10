@@ -6,12 +6,13 @@ import AppPortalHead from '../AppPortalHead';
 import Snake from '../Snake';
 import Hello from '../Hello';
 import Test from '../Test';
+import CssLayoutLearn from '../CssLayoutLearn';
 
 const Main = React.createClass({
   render() {
     return (
       <div id="Main">
-      <Test/>
+      <CssLayoutLearn/>
       </div>
     );
   },

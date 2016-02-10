@@ -1,0 +1,29 @@
+.root {
+  width: 1200px;
+  height: 1200px;
+  position: relative;
+  display: flex;
+  :global {
+    div {
+      display: flex;
+    }
+    .a {
+      width: 1000px;
+      height: 1000px;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
+    .b {
+      width: 100px;
+      height: 100px;
+    }
+    .c {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+:global {
+
+}
