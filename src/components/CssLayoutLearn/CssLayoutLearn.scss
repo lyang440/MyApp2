@@ -1,29 +1,33 @@
-.root {
-  width: 1200px;
-  height: 1200px;
+.flex {
   position: relative;
   display: flex;
+  flex-direction: column;
+  width:600px;
   :global {
-    div {
-      display: flex;
+    * {
+      display: inherit;
     }
-    .a {
-      width: 1000px;
-      height: 1000px;
-      justify-content: flex-start;
+    #box1{
+      flex-direction: row;
+    }
+    #box2{
+      flex-direction: row-reverse;
+    }
+    #box3{
       flex-direction: column;
     }
-    .b {
-      width: 100px;
-      height: 100px;
-    }
-    .c {
-      width: 100px;
-      height: 100px;
+    ul{
+      margin:0;
+      padding: 10px;
+      list-style: none;
+      background: #eee;
+      flex-direction: row;
+      li{
+        width: 50px;
+        height: 50px;
+        border:1px solid #aaa;
+        text-align: center;
+      }
     }
   }
-}
-
-:global {
-
 }

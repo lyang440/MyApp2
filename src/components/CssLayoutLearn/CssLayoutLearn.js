@@ -5,7 +5,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 const CssLayoutLearn = React.createClass({
   render() {
-    return <div className={css.root}> {jade.main({})} </div>;
+    return jade.main({css});
   },
 });
 
