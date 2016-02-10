@@ -1,33 +1,145 @@
-.flex {
+.flex :global {
   position: relative;
   display: flex;
+  width: 900px;
   flex-direction: column;
-  width:600px;
-  :global {
-    * {
-      display: inherit;
+  * {
+    display: inherit;
+  }
+  #box1 {
+    flex-flow: row wrap;
+  }
+  #box2 {
+    flex-direction: row-reverse;
+  }
+  #box3 {
+    flex-direction: column;
+  }
+  ul {
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+    flex-direction: row;
+    background: #eee;
+    li {
+      width: 250px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid #aaa;
     }
-    #box1{
-      flex-direction: row;
+    li:nth-child(2) {
+      order: -1;
     }
-    #box2{
-      flex-direction: row-reverse;
+  }
+}
+
+.flexbox3 :global {
+  ul {
+    display: flex;
+    list-style: none;
+
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  li {
+    width: 200px;
+    height: 150px;
+    padding: 5px;
+    margin: 10px 0;
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 150px;
+    color: white;
+    text-align: center;
+    background: tomato;
+  }
+}
+
+
+
+.flexnav :global {
+  ul {
+    display: flex;
+    margin: 0 ;
+    list-style: none;
+    background: deepskyblue;
+
+    flex-flow: row wrap;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+  }
+  a {
+    display: block;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+  }
+  @media all and (max-width: 600px) {
+    ul {
+      padding: 0;
+
+      flex-flow: column wrap;
     }
-    #box3{
-      flex-direction: column;
-    }
-    ul{
-      margin:0;
+    a {
       padding: 10px;
-      list-style: none;
-      background: #eee;
-      flex-direction: row;
-      li{
-        width: 50px;
-        height: 50px;
-        border:1px solid #aaa;
-        text-align: center;
-      }
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.3);
+      border-bottom: 1px solid rgba(0,0,0,.1);
     }
+    li:last-of-type a {
+      border-bottom: none;
+    }
+  }
+}
+
+
+.flex_3_column :global {
+  display: flex;
+  font-weight: bold;
+  text-align: center;
+
+  flex-flow: row wrap;
+  * {
+    padding: 10px;
+
+    flex: 1 100%;
+  }
+  .header {
+    background: tomato;
+  }
+  .footer {
+    background: lightgreen;
+  }
+  main {
+    text-align: left;
+    background: deepskyblue;
+  }
+  .aside-1 {
+    background: gold;
+  }
+  .aside-2 {
+    background: hotpink;
+  }
+  @media all and (min-width:600px) {
+    .aside {
+      flex: 1 auto;
+    }
+  }
+  @media all and (min-width:800px) {
+    .main {
+      flex: 2 0;
+    }
+  }
+  .aside-1 {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .aside-2 {
+    order: 3;
+  }
+  .footer {
+    order: 4;
   }
 }
