@@ -26,6 +26,7 @@ $main-menu-bg-background: #313E4B;
 
       justify-content: space-between;
       .left {
+        cursor:pointer;
         display: flex;
         width: 140px;
         padding-left: 10px;
@@ -43,6 +44,7 @@ $main-menu-bg-background: #313E4B;
 
         justify-content: flex-end;
         li {
+          cursor:pointer;
           display: flex;
           width: 55px;
           border: 1px solid #e8e8e8;
@@ -97,6 +99,7 @@ $main-menu-bg-background: #313E4B;
 
       h4.menu-nav {
         padding: 0 30px;
+        cursor:pointer;
       }
       ul.list {
         list-style: none;
