@@ -2,7 +2,8 @@ $header-height: 46px;
 $menu-weight: 240px;
 $main-navbar-z-index: 1000;
 $main-menu-z-index: 500;
-
+$search-block-background:#2c3748;
+$main-menu-bg-background:#313E4B;
 
 .root :global {
   .main-wrapper {
@@ -21,12 +22,13 @@ $main-menu-z-index: 500;
       flex-direction: row;
       border: none;
       border-bottom: 1px solid #e8e8e8;
+      background: white;
 
       justify-content: space-between;
       .left {
         display: flex;
         width: 140px;
-
+        padding-left: 10px;
         justify-content: center;
         align-items: center;
         img {
@@ -63,7 +65,35 @@ $main-menu-z-index: 500;
       z-index: $main-menu-z-index;
       width: $menu-weight;
       font-size: 15px;
-      background: yellow;
+      color: #999;
+      top: $header-height;
+      display: flex;
+      flex-direction: column;
+      .search {
+        background: $search-block-background;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .input{
+          width:200px;
+          line-height: 29px;
+          position: relative;
+          i{
+            position: absolute;
+            left: 10px;
+            top:7px;
+          }
+          input{
+            border-radius: 50px;
+            border:none;
+            box-shadow: inset 1px 1px 5px rgba(0,0,0,.2);
+            outline: 0;
+            padding-left: 29px;
+          }
+        }
+
+      }
     }
     .content-wrapper {
       position: relative;
@@ -80,7 +110,7 @@ $main-menu-z-index: 500;
       left: 0;
       width: $menu-weight;
       height: 100%;
-      background: green;
+      background:$main-menu-bg-background;
       border-right: 1px solid #313e48;
       border-left: none;
     }
