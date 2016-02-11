@@ -1,24 +1,31 @@
+$header-height: 46px;
+$menu-weight: 240px;
+
+$main-navbar-z-index:1000;
+$main-menu-z-index:500;
+
+
 .root :global {
   .main-wrapper {
     position: relative;
     width: 100%;
-    padding-left: 240px;
+    padding-left: $menu-weight;
     transition: all .5s;
     .main-navbar {
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
-      z-index: 1030;
-      height: 46px;
+      z-index: $main-navbar-z-index;
+      height: $header-height;
       background-color: red;
       border: none;
     }
     .main-menu {
       position: absolute;
       left: 0;
-      z-index: 500;
-      width: 240px;
+      z-index: $main-menu-z-index;
+      width: $menu-weight;
       font-size: 15px;
       background: yellow;
     }
@@ -28,15 +35,14 @@
       width: 100%;
       min-height: 905px;
       padding: 18px;
-      padding-top: 64px;
+      padding-top: 18px+$header-height;
       background: blue;
     }
     .main-menu-bg {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 400;
-      width: 240px;
+      width: $menu-weight;
       height: 100%;
       background: green;
       border-right: 1px solid #313e48;
