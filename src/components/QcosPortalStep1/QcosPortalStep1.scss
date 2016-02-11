@@ -170,7 +170,7 @@ $main-menu-bg-background: #313e4b;
           align-items: center;
           justify-content: center;
           .content {
-            width: 80%;
+            width: 241px;
             span.num {
               font-size: 3em;
             }
@@ -228,29 +228,66 @@ $main-menu-bg-background: #313e4b;
       }
       .service-panel {
         height: 183px;
-        padding-top: 48px;
         background-color: #f8f8f8;
-        position: relative;
-        .vertical-line {
-          position: relative;
-          top: -48px;
-          left: 52px;
+        display: flex;
+        flex-direction: row;
+        .left {
+          width: 120px;
           height: 100%;
-          border-left: 5px solid #d3d3d3;
-        }
-        .img-circle{
           position: relative;
-          top: -128px;
-          left: 26px;
-          border-radius: 50%;
-          border:5px solid #d2d2d2;
-          width: 60px;
-          height: 60px;
+          .vertical-line {
+            position: relative;
+            top: 0;
+            left: 52px;
+            height: 77%;
+            border-left: 5px solid #d3d3d3;
+          }
+          .img-circle {
+            position: relative;
+            top: -95px;
+            left: 26px;
+            border-radius: 50%;
+            border: 5px solid #d2d2d2;
+            width: 60px;
+            height: 60px;
+            background: white;
+            img {
+              width: 42px;
+              height: 42px;
+              margin: 4px;
+            }
+          }
+
+        }
+        .process {
+          width: 100%;
+          margin-top: 48px;
+          margin-bottom: 10px;
           background: white;
-          img{
-            width: 42px;
-            height:42px;
-            margin: 4px;
+          position: relative;
+          border: 1px solid #e5e5e5;
+          padding: 11px 20px 9px;
+          &:before{
+            border-width: 8px;
+            position: absolute;
+            z-index: 20;
+            top:18px;
+            left: -16px;
+            border-style: solid;
+            border-color: transparent;
+            border-right-color: #d2d2d2;
+            content:" ";
+          }
+          &:after{
+            border-width: 7px;
+            position: absolute;
+            z-index: 20;
+            top:19px;
+            left: -14px;
+            border-style: solid;
+            border-color: transparent;
+            border-right-color: white;
+            content:" ";
           }
         }
       }
