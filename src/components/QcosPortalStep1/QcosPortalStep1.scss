@@ -3,7 +3,7 @@ $menu-weight: 240px;
 $main-navbar-z-index: 1000;
 $main-menu-z-index: 500;
 $search-block-background: #2c3748;
-$main-menu-bg-background: #313E4B;
+$main-menu-bg-background: #313e4b;
 
 .root :global {
   .main-wrapper {
@@ -20,16 +20,17 @@ $main-menu-bg-background: #313E4B;
       display: flex;
       height: $header-height;
       flex-direction: row;
+      background: white;
       border: none;
       border-bottom: 1px solid #e8e8e8;
-      background: white;
 
       justify-content: space-between;
       .left {
-        cursor:pointer;
         display: flex;
         width: 140px;
         padding-left: 10px;
+        cursor: pointer;
+
         justify-content: center;
         align-items: center;
         img {
@@ -44,9 +45,9 @@ $main-menu-bg-background: #313E4B;
 
         justify-content: flex-end;
         li {
-          cursor:pointer;
           display: flex;
           width: 55px;
+          cursor: pointer;
           border: 1px solid #e8e8e8;
 
           justify-content: center;
@@ -63,60 +64,60 @@ $main-menu-bg-background: #313E4B;
     }
     .main-menu {
       position: absolute;
+      top: $header-height;
       left: 0;
       z-index: $main-menu-z-index;
+      display: flex;
       width: $menu-weight;
       font-size: 15px;
       color: #999;
-      top: $header-height;
-      display: flex;
       flex-direction: column;
       .search {
-        background: $search-block-background;
-        height: 80px;
         display: flex;
+        height: 80px;
+        background: $search-block-background;
+
         align-items: center;
         justify-content: center;
         .input {
+          position: relative;
           width: 200px;
           line-height: 29px;
-          position: relative;
           i {
             position: absolute;
-            left: 10px;
             top: 7px;
+            left: 10px;
           }
           input {
-            border-radius: 50px;
-            border: none;
-            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
-            outline: 0;
             padding-left: 29px;
+            border: none;
+            border-radius: 50px;
+            outline: 0;
+            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
           }
         }
-
       }
 
       h4.menu-nav {
         padding: 0 30px;
-        cursor:pointer;
+        cursor: pointer;
       }
       ul.list {
-        list-style: none;
         padding: 0;
         font-size: 1.1em;
+        list-style: none;
         li {
-          cursor:pointer;
           padding: 10px 30px;
+          cursor: pointer;
           i {
-            color: green;
             margin-right: 5px;
+            color: green;
           }
-          :hover{
-            color:white;
+          :hover {
+            color: white;
           }
-          &.active{
-            color:#fff;
+          &.active {
+            color: #fff;
             background: #24aae3;
           }
         }
@@ -127,9 +128,37 @@ $main-menu-bg-background: #313E4B;
       left: 0;
       width: 100%;
       min-height: 905px;
-      padding: 18px;
-      padding-top: 18px+$header-height;
-      background: blue;
+      padding-top: $header-height;
+      .service-header {
+        display: flex;
+        height: 44px;
+        line-height: 44px;
+        flex-direction: row;
+
+        flex-wrap: nowrap;
+        h4 {
+          width: 170px;
+          font-size: 1.5em;
+          i {
+            margin-right: 5px;
+            color: green;
+          }
+        }
+        a {
+          width: 100px;
+          color: #777;
+          text-align: center;
+          text-decoration: none;
+          cursor: pointer;
+          border-left: 1px solid #e7e7e7;
+          i {
+            margin-right: 5px;
+          }
+          &.active {
+            color: #24aae3;
+          }
+        }
+      }
     }
     .main-menu-bg {
       position: fixed;
@@ -143,5 +172,3 @@ $main-menu-bg-background: #313E4B;
     }
   }
 }
-
-
