@@ -15,10 +15,28 @@ div(class=css.root)
         .input
           input(type='text', placeholder='搜索')
           i.fa.fa-search
-      .service-nav
-      .service-list
-      .app-nav
-      .app-list
+      h4.menu-nav 服务列表
+        i.fa.fa-plus-circle.pull-right
+
+      ul.list
+        li.active
+          i.fa.fa-circle
+          | logbook-api
+        li
+          i.fa.fa-circle
+          | 2048
+        li
+          i.fa.fa-circle
+          | gitbook
+
+      h4.menu-nav 官方应用
+        i.fa.fa-plus-circle.pull-right
+      ul.list
+        li.active
+          i.fa.fa-server
+          | mysql1
+      h4.menu-nav 官方镜像库
+      h4.menu-nav 私有镜像库
       //=content(30, 'main-menu ')
     //.content-wrapper
     //  =content(10, 'content-wrapper ')
