@@ -5,6 +5,7 @@ $main-menu-z-index: 500;
 $search-block-background: #2c3748;
 $main-menu-bg-background: #313e4b;
 
+
 .root :global {
   .main-wrapper {
     position: relative;
@@ -202,7 +203,6 @@ $main-menu-bg-background: #313e4b;
           display: flex;
           height: 73px;
           border-left: 3px solid #f3a536;
-
           align-items: center;
           justify-content: center;
           a:hover {
@@ -219,6 +219,13 @@ $main-menu-bg-background: #313e4b;
             font-size: 1.2em;
           }
         }
+      }
+      .service-hosts{
+        background: #e5edf0;
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+        padding: 0;
       }
     }
     .main-menu-bg {
