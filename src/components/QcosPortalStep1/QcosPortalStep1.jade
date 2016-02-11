@@ -3,10 +3,16 @@
 div(class=css.root)
   .main-wrapper
     .main-navbar
-      =content(10, 'main-navbar ')
-    .main-menu
-      =content(30, 'main-menu ')
-    .content-wrapper
-      =content(10, 'content-wrapper ')
-    .main-menu-bg
-      =content(10, 'main-menu-bg ')
+      .left
+        img(src='http://qcos.qiniu.com/public/image/logo-alpha.png')
+      ul.right
+        li: i.fa.fa-envelope
+        li 文档
+        li 消息
+        li: img.img-responsive(src='https://dn-qcos-gravatar.qbox.me/avatar/bd70fe014515d9d90344c06eb13bf443')
+    //.main-menu
+    //  =content(30, 'main-menu ')
+    //.content-wrapper
+    //  =content(10, 'content-wrapper ')
+    //.main-menu-bg
+    //  =content(10, 'main-menu-bg ')
