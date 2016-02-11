@@ -1,0 +1,46 @@
+.root :global {
+  .main-wrapper {
+    position: relative;
+    width: 100%;
+    padding-left: 240px;
+    transition: all .5s;
+    .main-navbar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+      height: 46px;
+      background-color: red;
+      border: none;
+    }
+    .main-menu {
+      position: absolute;
+      left: 0;
+      z-index: 500;
+      width: 240px;
+      font-size: 15px;
+      background: yellow;
+    }
+    .content-wrapper {
+      position: relative;
+      left: 0;
+      width: 100%;
+      min-height: 905px;
+      padding: 18px;
+      padding-top: 64px;
+      background: blue;
+    }
+    .main-menu-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 400;
+      width: 240px;
+      height: 100%;
+      background: green;
+      border-right: 1px solid #313e48;
+      border-left: none;
+    }
+  }
+}

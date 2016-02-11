@@ -1,0 +1,6 @@
+{
+  "name": "QcosPortalStep1",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./QcosPortalStep1.js"
+}

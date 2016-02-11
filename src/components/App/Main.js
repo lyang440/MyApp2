@@ -7,13 +7,12 @@ import Snake from '../Snake';
 import Hello from '../Hello';
 import Test from '../Test';
 import CssLayoutLearn from '../CssLayoutLearn';
+import QcosPortalStep1 from '../QcosPortalStep1';
 
 const Main = React.createClass({
   render() {
     return (
-      <div id="Main">
-      <CssLayoutLearn/>
-      </div>
+      <QcosPortalStep1/>
     );
   },
 });
