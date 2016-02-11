@@ -57,5 +57,41 @@ div(class=css.root)
             a
               i.fa.fa-gear
               | 配置
+        .panel-body
+          .row.service-body
+            .col-md-3
+              .pod-num
+                .content
+                  span.num 1
+                  span.info &nbsp;服务副本
+                  i.edit.fa.fa-gear
+            .col-md-4
+              .pod-network
+                table
+                  tbody
+                    tr
+                      td 内网域名
+                      td logbook-api.service.qiniu
+                    tr
+                      td 服务IP
+                      td 172.16.3.199
+
+            .col-md-5
+              .pod-gates
+                table
+                  thead
+                    tr
+                      th 外网域名
+                      th(style="width: 23px")
+                      th 本地端口映射
+                  tbody
+                    tr
+                      td
+                        a 0yp3en9p.apps.qbox.me
+                      td &nbsp;
+                        i.fa.fa-long-arrow-right
+                        | &nbsp;
+                      td 80
+                i.edit.fa.fa-gear
     .main-menu-bg
       //=content(10, 'main-menu-bg ')

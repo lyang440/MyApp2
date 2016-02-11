@@ -159,6 +159,67 @@ $main-menu-bg-background: #313e4b;
           }
         }
       }
+      .service-body {
+        .pod-num {
+          position: relative;
+          display: flex;
+          height: 73px;
+          line-height: 73px;
+          border-left: 3px solid #24aae3;
+
+          align-items: center;
+          justify-content: center;
+          .content {
+            width: 80%;
+            span.num {
+              font-size: 3em;
+            }
+            span.info {
+              font-weight: 600;
+            }
+            i {
+              position: absolute;
+              top: 0;
+              right: 20px;
+              font-size: 1.2em;
+            }
+          }
+        }
+        .pod-network {
+          display: flex;
+          height: 73px;
+          border-left: 3px solid #bbb;
+
+          align-items: center;
+          justify-content: center;
+          td:first-child {
+            padding-right: 16px;
+            font-weight: 600;
+          }
+        }
+        .pod-gates {
+          position: relative;
+          display: flex;
+          height: 73px;
+          border-left: 3px solid #f3a536;
+
+          align-items: center;
+          justify-content: center;
+          a:hover {
+            text-decoration: none;
+            cursor: pointer;
+          }
+          th {
+            font-weight: 600;
+          }
+          i.edit {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            font-size: 1.2em;
+          }
+        }
+      }
     }
     .main-menu-bg {
       position: fixed;
