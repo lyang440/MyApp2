@@ -236,16 +236,17 @@ $main-menu-bg-background: #313e4b;
           position: relative;
           width: 120px;
           height: 100%;
-          .vertical-line {
-            position: relative;
+          &:before {
+            position: absolute;
             top: 0;
             left: 52px;
             height: 77%;
+            content: ' ';
             border-left: 5px solid #d3d3d3;
           }
           .img-circle {
-            position: relative;
-            top: -95px;
+            position: absolute;
+            top: 44px;
             left: 26px;
             width: 60px;
             height: 60px;
@@ -275,9 +276,7 @@ $main-menu-bg-background: #313e4b;
             left: -16px;
             z-index: 20;
             content: " ";
-            border-color: transparent;
-            border-style: solid;
-            border-width: 8px;
+            border: 8px solid transparent;
             border-right-color: #d2d2d2;
           }
           &:after {
@@ -286,9 +285,7 @@ $main-menu-bg-background: #313e4b;
             left: -14px;
             z-index: 20;
             content: " ";
-            border-color: transparent;
-            border-style: solid;
-            border-width: 7px;
+            border: 7px solid transparent;
             border-right-color: white;
           }
           .up {
