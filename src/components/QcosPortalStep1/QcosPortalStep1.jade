@@ -132,8 +132,17 @@ div(class=css.root)
               a.btn.btn-default
                 i.fa.fa-angle-down
                 | 详情
-            .down
-              | 正在运行：1 准备中：0 停止运行：0 平均CPU：0.01% 平均内存：19.29 MB
+            ul.down
+              li 正在运行：
+                span.num.green 1
+              li 准备中：
+                span.num.orange 0
+              li 停止运行：
+                span.num.red 0
+              li 平均CPU：
+                span.num 0.01%
+              li 平均内存：
+                span.num 19.29 MB
 
     .main-menu-bg
       //=content(10, 'main-menu-bg ')
