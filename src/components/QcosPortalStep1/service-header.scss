@@ -1,0 +1,30 @@
+.service-header :global {
+  display: flex;
+  height: 44px;
+  line-height: 44px;
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+  h4 {
+    width: 170px;
+    font-size: 1.5em;
+    i {
+      margin-right: 5px;
+      color: green;
+    }
+  }
+  a {
+    width: 100px;
+    color: #777;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-left: 1px solid #e7e7e7;
+    i {
+      margin-right: 5px;
+    }
+    &.active {
+      color: #24aae3;
+    }
+  }
+}

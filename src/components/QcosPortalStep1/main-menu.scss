@@ -1,0 +1,61 @@
+.main-menu :global {
+  position: absolute;
+  top: $header-height;
+  left: 0;
+  z-index: $main-menu-z-index;
+  display: flex;
+  width: $menu-weight;
+  font-size: 15px;
+  color: #999;
+  flex-direction: column;
+  .search {
+    display: flex;
+    height: 80px;
+    background: $search-block-background;
+
+    align-items: center;
+    justify-content: center;
+    .input {
+      position: relative;
+      width: 200px;
+      line-height: 29px;
+      i {
+        position: absolute;
+        top: 7px;
+        left: 10px;
+      }
+      input {
+        padding-left: 29px;
+        border: none;
+        border-radius: 50px;
+        outline: 0;
+        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
+      }
+    }
+  }
+
+  h4.menu-nav {
+    padding: 0 30px;
+    cursor: pointer;
+  }
+  ul.list {
+    padding: 0;
+    font-size: 1.1em;
+    list-style: none;
+    li {
+      padding: 10px 30px;
+      cursor: pointer;
+      i {
+        margin-right: 5px;
+        color: green;
+      }
+      :hover {
+        color: white;
+      }
+      &.active {
+        color: #fff;
+        background: #24aae3;
+      }
+    }
+  }
+}

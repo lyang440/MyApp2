@@ -1,0 +1,43 @@
+.panel-new-process :global{
+  display: flex;
+  height: 183px;
+  flex-direction: row;
+  .left{
+    position: relative;
+    width: 120px;
+    height: 100%;
+    .img-circle{
+      position: absolute;
+      top: 44px;
+      left: 26px;
+      width: 60px;
+      height: 60px;
+      background: white;
+      border: 5px dotted #d2d2d2;
+      border-radius: 50%;
+      i {
+        font-size: 32px;
+        line-height: 44px;
+        color: #D2D2D2;
+        margin: 5px 13px;
+      }
+    }
+  }
+  .right{
+    position: relative;
+    width: 100%;
+    .add{
+      width: 300px;
+      height:60px;
+      background: white;
+      position: absolute;
+      top: 44px;
+      left: 0;
+      line-height: 60px;
+      text-align: center;
+      font-size: 1.3em;
+      color:#d2d2d2;
+      border:2px dotted #d2d2d2;
+    }
+  }
+}
