@@ -106,48 +106,85 @@ div(class=css.root)
             //.col-md-6 平均内存
         div(class=css['service-hosts']).panel-footer
           i.fa.fa-angle-down
-        div(class=css['service-panel'])
-          .left
-            .img-circle
-              img(src='https://qcos.qiniu.com/public/image/repos/default.png')
-          .process
-            .up
-              span: strong p0
-              span
-                i.fa.fa-dot-circle-o
-                | wangkechun/logbook-api
-              span
-                i.fa.fa-tag
-                | 1.3
-              span.cmd
-                i.fa.fa-code
-                | /bin/sh -c "python server.py"
-              a.btn.btn-default
-                i.fa.fa-file-text-o
-                | 日志
-              a.btn.btn-default
-                i.fa.fa-desktop
-                | 登录
-              a.btn.btn-default
-                i.fa.fa-angle-down
-                | 详情
-            ul.down
-              li 正在运行：
-                span.num.green 1
-              li 准备中：
-                span.num.orange 0
-              li 停止运行：
-                span.num.red 0
-              li 平均CPU：
-                span.num 0.01%
-              li 平均内存：
-                span.num 19.29 MB
-        div(class=css['service-new-panel'])
-          .left
-            .img-circle
-              i.fa.fa-plus
-          .right
-            .add 添加新进程
+        .service-panel
+          div(class=css['panel-process'])
+            .left
+              .img-circle
+                img(src='https://qcos.qiniu.com/public/image/repos/default.png')
+            .process.triangle
+              .up
+                span: strong p0
+                span
+                  i.fa.fa-dot-circle-o
+                  | wangkechun/logbook-api
+                span
+                  i.fa.fa-tag
+                  | 1.3
+                span.cmd
+                  i.fa.fa-code
+                  | /bin/sh -c "python server.py"
+                a.btn.btn-default
+                  i.fa.fa-file-text-o
+                  | 日志
+                a.btn.btn-default
+                  i.fa.fa-desktop
+                  | 登录
+                a.btn.btn-default
+                  i.fa.fa-angle-down
+                  | 详情
+              ul.down
+                li 正在运行：
+                  span.num.green 1
+                li 准备中：
+                  span.num.orange 0
+                li 停止运行：
+                  span.num.red 0
+                li 平均CPU：
+                  span.num 0.01%
+                li 平均内存：
+                  span.num 19.29 MB
+          div(class=css['panel-process'])
+            .left
+              .img-circle
+                img(src='https://qcos.qiniu.com/public/image/repos/default.png')
+            .process.triangle
+              .up
+                span: strong p0
+                span
+                  i.fa.fa-dot-circle-o
+                  | wangkechun/logbook-api
+                span
+                  i.fa.fa-tag
+                  | 1.3
+                span.cmd
+                  i.fa.fa-code
+                  | /bin/sh -c "python server.py"
+                a.btn.btn-default
+                  i.fa.fa-file-text-o
+                  | 日志
+                a.btn.btn-default
+                  i.fa.fa-desktop
+                  | 登录
+                a.btn.btn-default
+                  i.fa.fa-angle-down
+                  | 详情
+              ul.down
+                li 正在运行：
+                  span.num.green 1
+                li 准备中：
+                  span.num.orange 0
+                li 停止运行：
+                  span.num.red 0
+                li 平均CPU：
+                  span.num 0.01%
+                li 平均内存：
+                  span.num 19.29 MB
+          div(class=css['panel-new-process'])
+            .left
+              .img-circle
+                i.fa.fa-plus
+            .right
+              .add.triangle 添加新进程
 
     div(class=css['main-menu-bg'])
       //=content(10, 'main-menu-bg ')

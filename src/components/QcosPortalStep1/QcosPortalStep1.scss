@@ -11,6 +11,27 @@ $main-menu-bg-background: #313e4b;
     width: 100%;
     padding-left: $menu-weight;
   }
+  // 对话框的左边的装饰用小三角形
+  .triangle{
+    &:before {
+      position: absolute;
+      top: 18px;
+      left: -16px;
+      z-index: 20;
+      content: " ";
+      border: 8px solid transparent;
+      border-right-color: #d2d2d2;
+    }
+    &:after {
+      position: absolute;
+      top: 19px;
+      left: -14px;
+      z-index: 20;
+      content: " ";
+      border: 7px solid transparent;
+      border-right-color: white;
+    }
+  }
 }
 
 
@@ -132,6 +153,9 @@ $main-menu-bg-background: #313e4b;
   width: 100%;
   min-height: 905px;
   padding-top: $header-height;
+  .service-panel{
+    background-color: #f8f8f8;
+  }
 }
 .service-header :global {
   display: flex;
@@ -231,11 +255,10 @@ $main-menu-bg-background: #313e4b;
   cursor: pointer;
   background: #e5edf0;
 }
-.service-panel :global {
+.panel-process :global {
   display: flex;
   height: 183px;
   flex-direction: row;
-  background-color: #f8f8f8;
   .left {
     position: relative;
     width: 120px;
@@ -244,7 +267,7 @@ $main-menu-bg-background: #313e4b;
       position: absolute;
       top: 0;
       left: 52px;
-      height: 77%;
+      height: 57%;
       content: ' ';
       border-left: 5px solid #d3d3d3;
     }
@@ -274,24 +297,7 @@ $main-menu-bg-background: #313e4b;
     flex-direction: column;
     background: white;
     border: 1px solid #e5e5e5;
-    &:before {
-      position: absolute;
-      top: 18px;
-      left: -16px;
-      z-index: 20;
-      content: " ";
-      border: 8px solid transparent;
-      border-right-color: #d2d2d2;
-    }
-    &:after {
-      position: absolute;
-      top: 19px;
-      left: -14px;
-      z-index: 20;
-      content: " ";
-      border: 7px solid transparent;
-      border-right-color: white;
-    }
+
     .up {
       display: flex;
       width: 100%;
@@ -347,11 +353,10 @@ $main-menu-bg-background: #313e4b;
   }
 }
 
-.service-new-panel :global{
+.panel-new-process :global{
   display: flex;
   height: 183px;
   flex-direction: row;
-  background-color: #f8f8f8;
   .left{
     position: relative;
     width: 120px;
@@ -388,24 +393,6 @@ $main-menu-bg-background: #313e4b;
       font-size: 1.3em;
       color:#d2d2d2;
       border:2px dotted #d2d2d2;
-      &:before {
-        position: absolute;
-        top: 18px;
-        left: -16px;
-        z-index: 20;
-        content: " ";
-        border: 8px solid transparent;
-        border-right-color: #d2d2d2;
-      }
-      &:after {
-        position: absolute;
-        top: 19px;
-        left: -14px;
-        z-index: 20;
-        content: " ";
-        border: 7px solid transparent;
-        border-right-color: white;
-      }
     }
   }
 }
