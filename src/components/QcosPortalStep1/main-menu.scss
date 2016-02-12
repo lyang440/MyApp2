@@ -1,41 +1,42 @@
 .main-menu :global {
-  position: absolute;
+  position: fixed;
   top: $header-height;
+  bottom: 0;
   left: 0;
   z-index: $main-menu-z-index;
   display: flex;
-  width: $menu-weight;
+  width: $menu-width;
+  overflow-y: auto;
   font-size: 15px;
   color: #999;
   flex-direction: column;
+  background: $main-menu-background;
+  .top {
+    height: 80px;
+  }
   .search {
+    position: relative;
     display: flex;
     height: 80px;
-    background: $search-block-background;
 
-    align-items: center;
     justify-content: center;
-    .input {
+    align-items: center;
+    input {
+      height: 29px;
+      padding-left: 29px;
+      border: none;
+      border-radius: 50px;
+      outline: 0;
+      box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
+    }
+    i {
       position: relative;
-      width: 200px;
-      line-height: 29px;
-      i {
-        position: absolute;
-        top: 7px;
-        left: 10px;
-      }
-      input {
-        padding-left: 29px;
-        border: none;
-        border-radius: 50px;
-        outline: 0;
-        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
-      }
+      left: 24px;
     }
   }
-
   h4.menu-nav {
-    padding: 0 30px;
+    margin-right: 20px;
+    margin-left: 20px;
     cursor: pointer;
   }
   ul.list {
@@ -43,7 +44,7 @@
     font-size: 1.1em;
     list-style: none;
     li {
-      padding: 10px 30px;
+      padding: 7.5px 0 7.5px 30px;
       cursor: pointer;
       i {
         margin-right: 5px;
@@ -53,8 +54,8 @@
         color: white;
       }
       &.active {
-        color: #fff;
-        background: #24aae3;
+        color: white;
+        background: $main-menu-active-background;
       }
     }
   }

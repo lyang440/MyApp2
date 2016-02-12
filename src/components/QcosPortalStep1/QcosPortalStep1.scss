@@ -1,16 +1,13 @@
-$header-height: 46px;
-$menu-weight: 240px;
-$main-navbar-z-index: 1000;
-$main-menu-z-index: 500;
-$search-block-background: #2c3748;
-$main-menu-bg-background: #313e4b;
+
+@import 'variable.scss';
+@import 'main-navbar.scss';
+@import 'main-menu.scss';
+@import 'service-header.scss';
+@import 'service-body.scss';
+@import 'panel-process.scss';
+@import 'panel-new-process.scss';
 
 .root :global {
-  .main-wrapper {
-    position: relative;
-    width: 100%;
-    padding-left: $menu-weight;
-  }
   // 对话框的左边的装饰用小三角形
   .triangle {
     &:before {
@@ -36,7 +33,7 @@ $main-menu-bg-background: #313e4b;
 
 .content-wrapper :global {
   position: relative;
-  left: 0;
+  left: $menu-width;
   width: 100%;
   min-height: 905px;
   padding-top: $header-height;
@@ -44,28 +41,29 @@ $main-menu-bg-background: #313e4b;
     background-color: #f8f8f8;
   }
 }
+
+
+
 .service-hosts :global {
   padding: 0;
   font-size: 18px;
   text-align: center;
   cursor: pointer;
+  background: $service-hosts-background;
   background: #e5edf0;
 }
 
-.main-menu-bg :global {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: $menu-weight;
-  height: 100%;
-  background: $main-menu-bg-background;
-  border-right: 1px solid #313e48;
-  border-left: none;
-}
 
-@import 'main-navbar.scss';
-@import 'main-menu.scss';
-@import 'service-header.scss';
-@import 'service-body.scss';
-@import 'panel-process.scss';
-@import 'panel-new-process.scss';
+@media (max-width: 700px) {
+  .main-navbar{
+    position: static;
+  }
+  .main-menu {
+    position: static;
+    width: auto;
+  }
+  .content-wrapper{
+    left:0;
+    padding-top: 0;
+  }
+}

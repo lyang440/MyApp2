@@ -1,51 +1,40 @@
 .main-navbar :global {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: $main-navbar-z-index;
   display: flex;
   height: $header-height;
+  padding: 0 20px;
   flex-direction: row;
-  background: white;
-  border: none;
-  border-bottom: 1px solid #e8e8e8;
+  background-color: white;
+  border-bottom: 1px solid $nav-border-color;
 
   justify-content: space-between;
-  .left {
-    display: flex;
-    width: 140px;
-    padding-left: 10px;
-    cursor: pointer;
-
-    justify-content: center;
-    align-items: center;
-    img {
-      height: 25px;
-    }
+  align-items: stretch;
+  :first-child {
+    border: none;
   }
-  ul.right {
-    display: flex;
-    height: $header-height;
-    list-style: none;
-    flex-direction: row;
+  a {
+    line-height: $header-height;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-left: 1px solid $nav-border-color;
 
-    justify-content: flex-end;
-    li {
-      display: flex;
-      width: 55px;
-      cursor: pointer;
-      border: 1px solid #e8e8e8;
-
-      justify-content: center;
-      align-items: center;
-      &:last-child {
-        width: 65px;
-      }
-      img {
-        width: 25px;
-        height: 25px;
-      }
-    }
+    flex-basis: 56px;
+    flex-shrink: 1;
+  }
+  .index-icon {
+    width: 122px;
+    height: 24px;
+  }
+  .avatar {
+    width: 25px;
+    height: 25px;
+  }
+  .space {
+    flex-grow: 1;
   }
 }
