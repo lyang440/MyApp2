@@ -1,12 +1,12 @@
-.panel-new-process :global{
+.panel-new-process :global {
   display: flex;
   height: 183px;
   flex-direction: row;
-  .left{
+  .left {
     position: relative;
     width: 120px;
     height: 100%;
-    .img-circle{
+    .img-circle {
       position: absolute;
       top: 44px;
       left: 26px;
@@ -16,28 +16,28 @@
       border: 5px dotted #d2d2d2;
       border-radius: 50%;
       i {
+        margin: 5px 13px;
         font-size: 32px;
         line-height: 44px;
-        color: #D2D2D2;
-        margin: 5px 13px;
+        color: #d2d2d2;
       }
     }
   }
-  .right{
+  .right {
     position: relative;
     width: 100%;
-    .add{
-      width: 300px;
-      height:60px;
-      background: white;
+    .add {
       position: absolute;
       top: 44px;
       left: 0;
-      line-height: 60px;
-      text-align: center;
+      width: 300px;
+      height: 60px;
       font-size: 1.3em;
-      color:#d2d2d2;
-      border:2px dotted #d2d2d2;
+      line-height: 60px;
+      color: #d2d2d2;
+      text-align: center;
+      background: white;
+      border: 2px dotted #d2d2d2;
     }
   }
 }

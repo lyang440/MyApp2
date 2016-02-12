@@ -12,7 +12,7 @@ $main-menu-bg-background: #313e4b;
     padding-left: $menu-weight;
   }
   // 对话框的左边的装饰用小三角形
-  .triangle{
+  .triangle {
     &:before {
       position: absolute;
       top: 18px;
@@ -40,7 +40,7 @@ $main-menu-bg-background: #313e4b;
   width: 100%;
   min-height: 905px;
   padding-top: $header-height;
-  .service-panel{
+  .service-panel {
     background-color: #f8f8f8;
   }
 }
@@ -65,7 +65,7 @@ $main-menu-bg-background: #313e4b;
 
 @import 'main-navbar.scss';
 @import 'main-menu.scss';
+@import 'service-header.scss';
+@import 'service-body.scss';
 @import 'panel-process.scss';
 @import 'panel-new-process.scss';
-@import 'service-body.scss';
-@import 'service-header.scss';
