@@ -1,9 +1,9 @@
 .service-header :global {
   display: flex;
   height: 44px;
-  line-height: 44px;
   flex-direction: row;
 
+  align-items: center;
   flex-wrap: nowrap;
   h4 {
     width: 170px;

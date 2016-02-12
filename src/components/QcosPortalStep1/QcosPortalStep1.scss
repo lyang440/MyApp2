@@ -33,16 +33,14 @@
 
 .content-wrapper :global {
   position: relative;
-  left: $menu-width;
   width: 100%;
   min-height: 905px;
   padding-top: $header-height;
+  padding-left: $menu-width;
   .service-panel {
     background-color: #f8f8f8;
   }
 }
-
-
 
 .service-hosts :global {
   padding: 0;
@@ -55,15 +53,15 @@
 
 
 @media (max-width: 700px) {
-  .main-navbar{
+  .main-navbar {
     position: static;
   }
   .main-menu {
     position: static;
     width: auto;
   }
-  .content-wrapper{
-    left:0;
+  .content-wrapper {
     padding-top: 0;
+    padding-left: 0;
   }
 }

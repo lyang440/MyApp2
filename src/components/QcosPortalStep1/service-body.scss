@@ -1,34 +1,40 @@
 .service-body :global {
-  .pod-num {
-    position: relative;
-    display: flex;
-    height: 73px;
-    line-height: 73px;
-    border-left: 3px solid $pod-border-left;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-left: 3px solid $pod-border-left;
 
+  justify-content: flex-start;
+  align-items: stretch;
+  .pod-num {
+    display: flex;
+
+    flex: 3;
     align-items: center;
-    justify-content: center;
     .content {
-      width: 241px;
-      span.num {
-        font-size: 3em;
-      }
-      span.info {
-        font-weight: 600;
-      }
-      i {
-        position: absolute;
-        top: 0;
-        right: 20px;
-        font-size: 1.2em;
-      }
+      position: relative;
+      height: 60px;
+
+      flex: 1;
+    }
+    span.num {
+      font-size: 3em;
+    }
+    span.info {
+      font-weight: 600;
+    }
+    i {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      font-size: 1.2em;
     }
   }
   .pod-network {
     display: flex;
-    height: 73px;
     border-left: 3px solid #bbb;
 
+    flex: 4;
     align-items: center;
     justify-content: center;
     td:first-child {
@@ -39,9 +45,9 @@
   .pod-gates {
     position: relative;
     display: flex;
-    height: 73px;
     border-left: 3px solid #f3a536;
 
+    flex: 5;
     align-items: center;
     justify-content: center;
     a:hover {
