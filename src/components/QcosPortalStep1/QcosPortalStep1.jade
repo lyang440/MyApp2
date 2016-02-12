@@ -1,7 +1,7 @@
 // react: main
 div(class=css.root)
   .main-wrapper
-    .main-navbar
+    div(class=css['main-navbar'])
       .left
         img(src='https://qcos.qiniu.com/public/image/logo-alpha.png')
       ul.right
@@ -9,7 +9,7 @@ div(class=css.root)
         li 文档
         li 消息
         li: img.img-responsive(src='https://dn-qcos-gravatar.qbox.me/avatar/bd70fe014515d9d90344c06eb13bf443')
-    .main-menu
+    div(class=css['main-menu'])
       .search
         .input
           input(type='text', placeholder='搜索')
@@ -37,10 +37,10 @@ div(class=css.root)
       h4.menu-nav 官方镜像库
       h4.menu-nav 私有镜像库
       //=content(30, 'main-menu ')
-    .content-wrapper
+    div(class=css['content-wrapper'])
       .panel
         .panel-heading
-          .service-header
+          div(class=css['service-header'])
             h4
               i.fa.fa-circle
               | logbook-api
@@ -57,7 +57,7 @@ div(class=css.root)
               i.fa.fa-gear
               | 配置
         .panel-body
-          .row.service-body
+          div(class=css['service-body']).row
             .col-md-3
               .pod-num
                 .content
@@ -104,9 +104,9 @@ div(class=css.root)
           .row
             //.col-md-6 平均CPU
             //.col-md-6 平均内存
-        .panel-footer.service-hosts
+        div(class=css['service-hosts']).panel-footer
           i.fa.fa-angle-down
-        .service-panel
+        div(class=css['service-panel'])
           .left
             .img-circle
               img(src='https://qcos.qiniu.com/public/image/repos/default.png')
@@ -143,5 +143,5 @@ div(class=css.root)
               li 平均内存：
                 span.num 19.29 MB
 
-    .main-menu-bg
+    div(class=css['main-menu-bg'])
       //=content(10, 'main-menu-bg ')
