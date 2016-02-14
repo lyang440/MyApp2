@@ -9,18 +9,24 @@ import {debug, fetch, tr, notNull} from './util';
 
 const MysqlPortalV1 = React.createClass({
     getInitialState() {
-      return {appInfo: {}, tabIndex: 0};
+      return {appInfo: {}, nodeInfo:{}, tabIndex: 0};
     },
 
     async componentDidMount() {
-      const appInfo = await fetch('http://l:5000/app/info');
+      const appInfo = await fetch('/v1/app/info');
       this.setState({appInfo});
+      const nodeInfo = await fetch('/v1/node/info');
+      this.setState({nodeInfo});
+      const paramsInfo = await fetch('/v1/params/info');
+      this.setState({paramsInfo});
+      debug('load',appInfo,nodeInfo,paramsInfo);
     },
 
     render() {
-      const {appInfo , tabIndex}= this.state;
+      debug('render');
+      const {appInfo , tabIndex, nodeInfo, paramsInfo}= this.state;
       const tbody = _.map(appInfo.exports, (v, key) => ({...v, key})).map(v=> {
-        const key = v.key.split('.').splice(-1);
+        const key = v.key.split('.').splice(-1)[0];
         const hit = <span className="fa fa-circle text-success"></span>;
         return <tr key={v.key}>
           <td>{tr(key)}</td>
@@ -30,6 +36,20 @@ const MysqlPortalV1 = React.createClass({
           <td>{hit}正常</td>
         </tr>;
       });
+
+      const tbody2 = _.map(nodeInfo, (v, key) => ({...v, key})).map(v=> {
+        const key = v.key;
+        const hit = <span className="fa fa-circle text-success"></span>;
+        return <tr key={v.key}>
+          <td>{tr(key)}</td>
+          <td>{v.key}.service.qiniu</td>
+          <td>{v.address}</td>
+          <td>{3306}</td>
+          <td>{hit}{tr(v.status)}</td>
+        </tr>;
+      });
+
+
       const Node = (
         <table className="table">
           <thead>
@@ -41,12 +61,24 @@ const MysqlPortalV1 = React.createClass({
             <th>状态</th>
           </tr>
           </thead>
-          <tbody>{tbody}</tbody>
+          <tbody>{tbody}{tbody2}</tbody>
         </table>
       );
-      const Content = [Node, null, null, null];
+
+      const ParamModification = jade.test({paramsInfo});
+
+      const Tabs = {
+        '节点': Node,
+        '监控': null,
+        '参数修改': ParamModification,
+        '操作日志': null,
+        '备份': null,
+        '任务': null
+      };
+
+
       return (
-        <div className={css.root} >
+        <div className={css.root}>
           <Grid>
             <Row>
               <Col xs={3}>
@@ -82,15 +114,15 @@ const MysqlPortalV1 = React.createClass({
                 </Panel>
               </Col>
               <Col xs={9}>
-                  <Nav bsStyle="tabs" activeKey={tabIndex} onSelect={index=>this.setState({ tabIndex:index })}>
-                    {
-                      ['节点', '监控', '操作日志', '备份', '任务'].map((v, index) => {
-                        return <NavItem key={index} eventKey={index}>{v}</NavItem>;
-                      })
-                    }
-                  </Nav>
+                <Nav bsStyle="tabs" activeKey={tabIndex} onSelect={index=>this.setState({ tabIndex:index })}>
+                  {
+                    _.keys(Tabs).map((v, index) => {
+                      return <NavItem key={index} eventKey={index}>{v}</NavItem>;
+                    })
+                  }
+                </Nav>
                 <Panel >
-                  {notNull(Content[tabIndex])}
+                  {notNull(_.values(Tabs)[tabIndex])}
                 </Panel>
               </Col>
             </Row>

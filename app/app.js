@@ -8,8 +8,9 @@ app.use(logger());
 
 var api = router();
 
-api.get('/app/info', function*(){
-  this.body = {
+var param = require('./param.json');
+
+var APP_INFO = {
   "code": 200,
   "data": {
     "title": "good",
@@ -31,6 +32,36 @@ api.get('/app/info', function*(){
     "vendorUri": ""
   }
 };
+
+var NODE_INFO = {
+  code:200,
+  data:{
+    'percona-cluster-1':{
+      status:'normal'
+    },
+    'percona-cluster-2':{
+      status:'normal'
+    },
+    'percona-cluster-3':{
+      status:'normal'
+    }
+  }
+};
+
+var PARAMS_INFO = {
+  code:200,
+  data:{
+    params:param.data.Parameters.settingParams
+  }
+}
+api.get('/v1/app/info', function*(){
+  this.body = APP_INFO;
+});
+api.get('/v1/node/info', function*(){
+  this.body = NODE_INFO;
+});
+api.get('/v1/params/info', function*(){
+  this.body = PARAMS_INFO;
 });
 
 

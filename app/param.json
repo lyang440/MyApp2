@@ -1,0 +1,744 @@
+{
+  "code": "200",
+  "data": {
+    "Engine": "mysql",
+    "EngineVersion": "5.6",
+    "ParameterCount": 81,
+    "Parameters": {
+      "settingParams": [
+        {
+          "CheckingCode": "[0|1]",
+          "ForceModify": "false",
+          "ForceRestart": "false",
+          "ParameterDescription": "The autocommit mode. If set to 1, all changes to a table take effect immediately. If set to 0, you must use COMMIT to accept a transaction or ROLLBACK to cancel it",
+          "ParameterName": "autocommit",
+          "ParameterValue": "1",
+          "runningParameterValue": "1"
+        },
+        {
+          "CheckingCode": "[1-65535]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "auto_increment_increment and auto_increment_offset are intended for use with master-to-master replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive. Setting the value of either of these two variables to 0 causes its value to be set to 1 instead. Attempting to set the value of either of these two variables to an integer greater than 65,535 or less than 0 causes its value to be set to 65,535 instead. Attempting to set the value of auto_increment_increment or auto_increment_offset to a noninteger value gives rise to an error, and the actual value of the variable remains unchanged.",
+          "ParameterName": "auto_increment_increment",
+          "ParameterValue": "1",
+          "runningParameterValue": "1"
+        },
+        {
+          "CheckingCode": "[1-65535]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "determines the starting point for the AUTO_INCREMENT column value.",
+          "ParameterName": "auto_increment_offset",
+          "ParameterValue": "1",
+          "runningParameterValue": "1"
+        },
+        {
+          "CheckingCode": "[0-65535]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "The number of outstanding connection requests MySQL can have.",
+          "ParameterName": "back_log",
+          "ParameterValue": "3000",
+          "runningParameterValue": "3000"
+        },
+        {
+          "CheckingCode": "[4096-16777216]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The size of the transactional cache for updates to transactional engines for the binary log.",
+          "ParameterName": "binlog_cache_size",
+          "ParameterValue": "2097152",
+          "runningParameterValue": "2097152"
+        },
+        {
+          "CheckingCode": "[CRC32|NONE]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "",
+          "ParameterName": "binlog_checksum",
+          "ParameterValue": "CRC32",
+          "runningParameterValue": "CRC32"
+        },
+        {
+          "CheckingCode": "[full|minimal]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "binlog save every column or actually required column in binlog images",
+          "ParameterName": "binlog_row_image",
+          "ParameterValue": "full",
+          "runningParameterValue": "full"
+        },
+        {
+          "CheckingCode": "[4096-16777216]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The size of the statement cache for updates to non-transactional engines for the binary log.",
+          "ParameterName": "binlog_stmt_cache_size",
+          "ParameterValue": "32768",
+          "runningParameterValue": "32768"
+        },
+        {
+          "CheckingCode": "[utf8|latin1|gbk|utf8mb4]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "The server&#39;s default character set. ",
+          "ParameterName": "character_set_server",
+          "ParameterValue": "utf8",
+          "runningParameterValue": "utf8"
+        },
+        {
+          "CheckingCode": "[0|1|2]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "NEVER-Disables concurrent inserts;AUTO-(Default) Enables concurrent insert for MyISAM tables that do not have holes;ALWAYS-Enables concurrent inserts for all MyISAM tables, even those that have holes. For a table with a hole, new rows are inserted at the end of the table if it is in use by another thread. Otherwise, MySQL acquires a normal write lock and inserts the row into the hole.",
+          "ParameterName": "concurrent_insert",
+          "ParameterValue": "1",
+          "runningParameterValue": "1"
+        },
+        {
+          "CheckingCode": "[1-3600]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake. The default value is 10 seconds as of MySQL 5.1.23 and 5 seconds before that.Increasing the connect_timeout value might help if clients frequently encounter errors of the form Lost connection to MySQL server at &#39;XXX&#39;, system error: errno.",
+          "ParameterName": "connect_timeout",
+          "ParameterValue": "10",
+          "runningParameterValue": "10"
+        },
+        {
+          "CheckingCode": "[InnoDB|TokuDB|innodb|tokudb]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "The default storage engine for new tables",
+          "ParameterName": "default_storage_engine",
+          "ParameterValue": "InnoDB",
+          "runningParameterValue": "InnoDB"
+        },
+        {
+          "CheckingCode": "[SYSTEM|-12:00|-11:00|-10:00|-9:00|-8:00|-7:00|-6:00|-5:00|-4:00|-3:00|-2:00|-1:00|\\+0:00|\\+1:00|\\+2:00|\\+3:00|\\+4:00|\\+5:00|\\+6:00|\\+7:00|\\+8:00|\\+9:00|\\+10:00|\\+11:00|\\+12:00|\\+13:00]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "数据库的默认时区",
+          "ParameterName": "default_time_zone",
+          "ParameterValue": "SYSTEM",
+          "runningParameterValue": "SYSTEM"
+        },
+        {
+          "CheckingCode": "[0-7]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The default mode value to use for the WEEK() function",
+          "ParameterName": "default_week_format",
+          "ParameterValue": "0",
+          "runningParameterValue": "0"
+        },
+        {
+          "CheckingCode": "[1-4294967295]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "After inserting delayed_insert_limit delayed rows, the INSERT DELAYED handler thread checks whether there are any SELECT statements pending. If so, it permits them to execute before continuing to insert delayed rows",
+          "ParameterName": "delayed_insert_limit",
+          "ParameterValue": "100",
+          "runningParameterValue": "100"
+        },
+        {
+          "CheckingCode": "[1-3600]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "How many seconds an INSERT DELAYED handler thread should wait for INSERT statements before terminating.",
+          "ParameterName": "delayed_insert_timeout",
+          "ParameterValue": "300",
+          "runningParameterValue": "300"
+        },
+        {
+          "CheckingCode": "[1-4294967295]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "This is a per-table limit on the number of rows to queue when handling INSERT DELAYED statements. If the queue becomes full, any client that issues an INSERT DELAYED statement waits until there is room in the queue again",
+          "ParameterName": "delayed_queue_size",
+          "ParameterValue": "1000",
+          "runningParameterValue": "1000"
+        },
+        {
+          "CheckingCode": "[ON|OFF|ALL]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "This option applies only to MyISAM tables. It can have one of the following values to affect handling of the DELAY_KEY_WRITE table option that can be used in CREATE TABLE statements",
+          "ParameterName": "delay_key_write",
+          "ParameterValue": "ON",
+          "runningParameterValue": "ON"
+        },
+        {
+          "CheckingCode": "[0-30]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "This variable indicates the number of digits by which to increase the scale of the result of division operations performed with the / operator. The default value is 4. The minimum and maximum values are 0 and 30, respectively. The following example illustrates the effect of increasing the default value.",
+          "ParameterName": "div_precision_increment",
+          "ParameterValue": "4",
+          "runningParameterValue": "4"
+        },
+        {
+          "CheckingCode": "[1-3600]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "The minimum length of the word to be included in a FULLTEXT index.",
+          "ParameterName": "ft_min_word_len",
+          "ParameterValue": "4",
+          "runningParameterValue": "4"
+        },
+        {
+          "CheckingCode": "[0-1000]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "The number of top matches to use for full-text searches performed using WITH QUERY EXPANSION.",
+          "ParameterName": "ft_query_expansion_limit",
+          "ParameterValue": "20",
+          "runningParameterValue": "20"
+        },
+        {
+          "CheckingCode": "[4-1844674407370954752]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The maximum permitted result length in bytes for the GROUP_CONCAT() function. The default is 1024,Unit:Byte",
+          "ParameterName": "group_concat_max_len",
+          "ParameterValue": "1024",
+          "runningParameterValue": "1024"
+        },
+        {
+          "CheckingCode": "[ON|OFF]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "innodb_adaptive_hash_index",
+          "ParameterName": "innodb_adaptive_hash_index",
+          "ParameterValue": "ON",
+          "runningParameterValue": "ON"
+        },
+        {
+          "CheckingCode": "[0|1|2]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "The locking mode to use for generating auto-increment values. The permissible values are 0, 1, or 2, for ",
+          "ParameterName": "innodb_autoinc_lock_mode",
+          "ParameterValue": "1",
+          "runningParameterValue": "1"
+        },
+        {
+          "CheckingCode": "[1-4294967295]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The number of threads that can enter InnoDB concurrently is determined by the innodb_thread_concurrency variable.",
+          "ParameterName": "innodb_concurrency_tickets",
+          "ParameterValue": "5000",
+          "runningParameterValue": "5000"
+        },
+        {
+          "CheckingCode": "[0|1|2]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "If the value of innodb_flush_log_at_trx_commit is 0, the log buffer is written out to the log file once per second and the flush to disk operation is performed on the log file, but nothing is done at a transaction commit. When the value is 1 (the default), the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. When the value is 2, the log buffer is written out to the file at each commit, but the flush to disk operation is not performed on it. However, the flushing on the log file takes place once per second also when the value is 2.",
+          "ParameterName": "innodb_flush_log_at_trx_commit",
+          "ParameterValue": "1",
+          "runningParameterValue": "1"
+        },
+        {
+          "CheckingCode": "[10-84]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "Maximum length of words that are stored in an InnoDB FULLTEXT index.",
+          "ParameterName": "innodb_ft_max_token_size",
+          "ParameterValue": "84",
+          "runningParameterValue": "84"
+        },
+        {
+          "CheckingCode": "[0-16]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "Minimum length of words that are stored in an InnoDB FULLTEXT index",
+          "ParameterName": "innodb_ft_min_token_size",
+          "ParameterValue": "3",
+          "runningParameterValue": "3"
+        },
+        {
+          "CheckingCode": "[ON|OFF]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "Enable this option to allow index key prefixes longer than 767 bytes (up to 3072 bytes), for InnoDB tables that use the DYNAMIC and COMPRESSED row formats\r\n",
+          "ParameterName": "innodb_large_prefix",
+          "ParameterValue": "OFF",
+          "runningParameterValue": "OFF"
+        },
+        {
+          "CheckingCode": "[1-1073741824]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The timeout in seconds an InnoDB transaction may wait for a row lock before giving up. The default value is 50 seconds. Unit:Second",
+          "ParameterName": "innodb_lock_wait_timeout",
+          "ParameterValue": "50",
+          "runningParameterValue": "50"
+        },
+        {
+          "CheckingCode": "[50-90]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "This is an integer in the range from 0 to 100. The default value is 90 for the built-in InnoDB, 75 for InnoDB Plugin. The main thread in InnoDB tries to write pages from the buffer pool so that the percentage of dirty (not yet written) pages will not exceed this value.",
+          "ParameterName": "innodb_max_dirty_pages_pct",
+          "ParameterValue": "75",
+          "runningParameterValue": "75"
+        },
+        {
+          "CheckingCode": "[5-95]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "(InnoDB Plugin only) Specifies the approximate percentage of the InnoDB buffer pool used for the old block sublist. The range of values is 5 to 95. The default value is 37 (that is, 3/8 of the pool).",
+          "ParameterName": "innodb_old_blocks_pct",
+          "ParameterValue": "37",
+          "runningParameterValue": "37"
+        },
+        {
+          "CheckingCode": "[0-1024]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "(InnoDB Plugin only) Specifies how long in milliseconds (ms) a block inserted into the old sublist must stay there after its first access before it can be moved to the new sublist. The default value is 0: A block inserted into the old sublist moves immediately to the new sublist the first time it is accessed, no matter how soon after insertion the access occurs. If the value is greater than 0, blocks remain in the old sublist until an access occurs at least that many ms after the first access.Unit:ms",
+          "ParameterName": "innodb_old_blocks_time",
+          "ParameterValue": "1000",
+          "runningParameterValue": "1000"
+        },
+        {
+          "CheckingCode": "[1-8192]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "This variable is relevant only if you use multiple InnoDB tablespaces. It specifies the maximum number of .ibd files that MySQL can keep open at one time. The minimum value is 10. The default value is 300.",
+          "ParameterName": "innodb_open_files",
+          "ParameterValue": "3000",
+          "runningParameterValue": "3000"
+        },
+        {
+          "CheckingCode": "[OFF|ON]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "",
+          "ParameterName": "innodb_print_all_deadlocks",
+          "ParameterValue": "OFF",
+          "runningParameterValue": "OFF"
+        },
+        {
+          "CheckingCode": "[1-5000]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "The granularity of changes, expressed in units of redo log records, that trigger a purge operation, flushing the changed buffer pool blocks to disk.",
+          "ParameterName": "innodb_purge_batch_size",
+          "ParameterValue": "300",
+          "runningParameterValue": "300"
+        },
+        {
+          "CheckingCode": "[1-32]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "The number of background threads devoted to the InnoDB purge operation.",
+          "ParameterName": "innodb_purge_threads",
+          "ParameterValue": "1",
+          "runningParameterValue": "1"
+        },
+        {
+          "CheckingCode": "[0-64]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "(InnoDB Plugin only) Controls the sensitivity of linear read-ahead that InnoDB uses to prefetch pages into the buffer pool. If InnoDB reads at least innodb_read_ahead_threshold pages sequentially from an extent (64 pages), it initiates an asynchronous read for the entire following extent.",
+          "ParameterName": "innodb_read_ahead_threshold",
+          "ParameterValue": "56",
+          "runningParameterValue": "56"
+        },
+        {
+          "CheckingCode": "[1-64]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "(InnoDB Plugin only) The number of I/O threads for read operations in InnoDB. The default value is 4.",
+          "ParameterName": "innodb_read_io_threads",
+          "ParameterValue": "4",
+          "runningParameterValue": "4"
+        },
+        {
+          "CheckingCode": "[OFF|ON]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "InnoDB rolls back only the last statement on a transaction timeout by default. If --innodb_rollback_on_timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction (the same behavior as in MySQL 4.1). This variable was added in MySQL 5.1.15",
+          "ParameterName": "innodb_rollback_on_timeout",
+          "ParameterValue": "OFF",
+          "runningParameterValue": "OFF"
+        },
+        {
+          "CheckingCode": "[nulls_equal|nulls_unequal|nulls_ignored]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "How the server treats NULL values when collecting statistics about the distribution of index values for InnoDB tables. This variable has three possible values, nulls_equal, nulls_unequal, and nulls_ignored. For nulls_equal, all NULL index values are considered equal and form a single value group that has a size equal to the number of NULL values. For nulls_unequal, NULL values are considered unequal, and each NULL forms a distinct value group of size 1. For nulls_ignored, NULL values are ignored.",
+          "ParameterName": "innodb_stats_method",
+          "ParameterValue": "nulls_equal",
+          "runningParameterValue": "nulls_equal"
+        },
+        {
+          "CheckingCode": "[ON|OFF]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "When this variable is enabled (which is the default, as before the variable was created), InnoDB updates statistics during metadata statements such as SHOW TABLE STATUS or SHOW INDEX, or when accessing the INFORMATION_SCHEMA tables TABLES or STATISTICS. (These updates are similar to what happens for ANALYZE TABLE.) When disabled, InnoDB does not update statistics during these operations. Disabling this variable can improve access speed for schemas that have a large number of tables or indexes. It can also improve the stability of execution plans for queries that involve InnoDB tables.",
+          "ParameterName": "innodb_stats_on_metadata",
+          "ParameterValue": "OFF",
+          "runningParameterValue": "OFF"
+        },
+        {
+          "CheckingCode": "[1-4294967296]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "(InnoDB Plugin only) The number of index pages to sample for index distribution statistics such as are calculated by ANALYZE TABLE. The default value is 8.",
+          "ParameterName": "innodb_stats_sample_pages",
+          "ParameterValue": "8",
+          "runningParameterValue": "8"
+        },
+        {
+          "CheckingCode": "[ON|OFF]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "(InnoDB Plugin only) Whether InnoDB returns errors rather than warnings for certain conditions. This is analogous to strict SQL mode. The default value is OFF. See InnoDB Strict Mode for a list of the conditions that are affected.",
+          "ParameterName": "innodb_strict_mode",
+          "ParameterValue": "OFF",
+          "runningParameterValue": "OFF"
+        },
+        {
+          "CheckingCode": "[ON|OFF]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "If autocommit = 0, InnoDB honors LOCK TABLES; MySQL does not return from LOCK TABLES ... WRITE until all other threads have released all their locks to the table. The default value of innodb_table_locks is 1, which means that LOCK TABLES causes InnoDB to lock a table internally if autocommit = 0.",
+          "ParameterName": "innodb_table_locks",
+          "ParameterValue": "ON",
+          "runningParameterValue": "ON"
+        },
+        {
+          "CheckingCode": "[0-128]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "InnoDB tries to keep the number of operating system threads concurrently inside InnoDB less than or equal to the limit given by this variable. Once the number of threads reaches this limit, additional threads are placed into a wait state within a FIFO queue for execution.",
+          "ParameterName": "innodb_thread_concurrency",
+          "ParameterValue": "0",
+          "runningParameterValue": "0"
+        },
+        {
+          "CheckingCode": "[1-3600000]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "How long InnoDB threads sleep before joining the InnoDB queue, in microseconds. The default value is 10,000. A value of 0 disables sleep.Unit:ms",
+          "ParameterName": "innodb_thread_sleep_delay",
+          "ParameterValue": "10000",
+          "runningParameterValue": "10000"
+        },
+        {
+          "CheckingCode": "[OFF|ON]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "Specifies whether to use the Linux asynchronous I/O subsystem. This variable applies to Linux systems only, and cannot be change.",
+          "ParameterName": "innodb_use_native_aio",
+          "ParameterValue": "OFF",
+          "runningParameterValue": "0"
+        },
+        {
+          "CheckingCode": "[1-64]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "(InnoDB Plugin only) The number of I/O threads for write operations in InnoDB. The default value is 4.",
+          "ParameterName": "innodb_write_io_threads",
+          "ParameterValue": "4",
+          "runningParameterValue": "4"
+        },
+        {
+          "CheckingCode": "[10-86400]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The number of seconds the server waits for activity on an interactive connection before closing it. An interactive client is defined as a client that uses the CLIENT_INTERACTIVE option to mysql_real_connect(). Unit:second.",
+          "ParameterName": "interactive_timeout",
+          "ParameterValue": "7200",
+          "runningParameterValue": "7200"
+        },
+        {
+          "CheckingCode": "[100-4294967295]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "This value controls the demotion of buffers from the hot sublist of a key cache to the warm sublist. Lower values cause demotion to happen more quickly. The minimum value is 100. The default value is 300.Unit:Second.",
+          "ParameterName": "key_cache_age_threshold",
+          "ParameterValue": "300",
+          "runningParameterValue": "300"
+        },
+        {
+          "CheckingCode": "[512-16384]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The size in bytes of blocks in the key cache. The default value is 1024.Unit:Byte.",
+          "ParameterName": "key_cache_block_size",
+          "ParameterValue": "1024",
+          "runningParameterValue": "1024"
+        },
+        {
+          "CheckingCode": "[1-100]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The division point between the hot and warm sublists of the key cache buffer list. The value is the percentage of the buffer list to use for the warm sublist. Permissible values range from 1 to 100. The default value is 100.",
+          "ParameterName": "key_cache_division_limit",
+          "ParameterValue": "100",
+          "runningParameterValue": "100"
+        },
+        {
+          "CheckingCode": "[ON|OFF]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "Whether queries that do not use indexes are logged to the slow query log.",
+          "ParameterName": "log_queries_not_using_indexes",
+          "ParameterValue": "OFF",
+          "runningParameterValue": "OFF"
+        },
+        {
+          "CheckingCode": "[0.5-10]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file;Unit:Second.",
+          "ParameterName": "long_query_time",
+          "ParameterValue": "1",
+          "runningParameterValue": "1"
+        },
+        {
+          "CheckingCode": "[0-4294967295]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "statement be interrupted if the executing time exceeds this value",
+          "ParameterName": "loose_max_statement_time",
+          "ParameterValue": "0",
+          "runningParameterValue": "0"
+        },
+        {
+          "CheckingCode": "[0-1073741824000]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "",
+          "ParameterName": "loose_rds_max_tmp_disk_space",
+          "ParameterValue": "10737418240",
+          "runningParameterValue": "10737418240"
+        },
+        {
+          "CheckingCode": "[0-50000]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "Max concurrency allowed for SELECT",
+          "ParameterName": "loose_rds_threads_running_high_watermark",
+          "ParameterValue": "50000",
+          "runningParameterValue": "50000"
+        },
+        {
+          "CheckingCode": "[0-100]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": " TokuDB buffer pool size ratio",
+          "ParameterName": "loose_tokudb_buffer_pool_ratio",
+          "ParameterValue": "0",
+          "runningParameterValue": "0"
+        },
+        {
+          "CheckingCode": "[0|1]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "If set to 1, all INSERT, UPDATE, DELETE, and LOCK TABLE WRITE statements wait until there is no pending SELECT or LOCK TABLE READ on the affected table. This affects only storage engines that use only table-level locking (such as MyISAM, MEMORY, and MERGE). This variable previously was named sql_low_priority_updates.",
+          "ParameterName": "low_priority_updates",
+          "ParameterValue": "0",
+          "runningParameterValue": "0"
+        },
+        {
+          "CheckingCode": "[16384-1073741824]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The maximum size of one packet or any generated/intermediate string,Unit:Byte",
+          "ParameterName": "max_allowed_packet",
+          "ParameterValue": "1073741824",
+          "runningParameterValue": "1024M"
+        },
+        {
+          "CheckingCode": "[1-4294967295]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "If more than this many successive connection requests from a host are interrupted without a successful connection, the server blocks that host from further connections. You can unblock blocked hosts by flushing the host cache.",
+          "ParameterName": "max_connect_errors",
+          "ParameterValue": "100",
+          "runningParameterValue": "100"
+        },
+        {
+          "CheckingCode": "[0-838860]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The cutoff on the size of index values that determines which filesort algorithm to use",
+          "ParameterName": "max_length_for_sort_data",
+          "ParameterValue": "1024",
+          "runningParameterValue": "1024"
+        },
+        {
+          "CheckingCode": "[262144-16777216]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The size of the buffer that is allocated when sorting MyISAM indexes during a REPAIR TABLE or when creating indexes with CREATE INDEX or ALTER TABLE. ",
+          "ParameterName": "myisam_sort_buffer_size",
+          "ParameterValue": "262144",
+          "runningParameterValue": "262144"
+        },
+        {
+          "CheckingCode": "[1-4294967295]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The number of seconds to wait for more data from a connection before aborting the read.",
+          "ParameterName": "net_read_timeout",
+          "ParameterValue": "30",
+          "runningParameterValue": "30"
+        },
+        {
+          "CheckingCode": "[1-4294967295]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "If a read or write on a communication port is interrupted, retry this many times before giving up.",
+          "ParameterName": "net_retry_count",
+          "ParameterValue": "10",
+          "runningParameterValue": "10"
+        },
+        {
+          "CheckingCode": "[1-4294967295]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The number of seconds to wait for a block to be written to a connection before aborting the write.",
+          "ParameterName": "net_write_timeout",
+          "ParameterValue": "60",
+          "runningParameterValue": "60"
+        },
+        {
+          "CheckingCode": "[4000-65535]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "",
+          "ParameterName": "open_files_limit",
+          "ParameterValue": "65535",
+          "runningParameterValue": "65535"
+        },
+        {
+          "CheckingCode": "[ON|OFF]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "enable performance_schema or not",
+          "ParameterName": "performance_schema",
+          "ParameterValue": "OFF",
+          "runningParameterValue": "OFF"
+        },
+        {
+          "CheckingCode": "[1024-16384]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The allocation size of memory blocks that are allocated for objects created during statement parsing and execution. Unit:Byte",
+          "ParameterName": "query_alloc_block_size",
+          "ParameterValue": "8192",
+          "runningParameterValue": "8192"
+        },
+        {
+          "CheckingCode": "[1-1048576]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "Don&#39;t cache results that are larger than this number of bytes. The default value is 1MB. \r\n\r\n\r\n",
+          "ParameterName": "query_cache_limit",
+          "ParameterValue": "1048576",
+          "runningParameterValue": "1048576"
+        },
+        {
+          "CheckingCode": "[0-104857600]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The amount of memory allocated for caching query results. The default value is 0, which disables the query cache. The permissible values are multiples of 1024; other values are rounded down to the nearest multiple. Unit:Byte",
+          "ParameterName": "query_cache_size",
+          "ParameterValue": "0",
+          "runningParameterValue": "0"
+        },
+        {
+          "CheckingCode": "[0|1|2]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "",
+          "ParameterName": "query_cache_type",
+          "ParameterValue": "0",
+          "runningParameterValue": "0"
+        },
+        {
+          "CheckingCode": "[8192-1048576]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The size of the persistent buffer used for statement parsing and execution. This buffer is not freed between statements. If you are running complex queries, a larger query_prealloc_size value might be helpful in improving performance, because it can reduce the need for the server to perform memory allocation during query execution operations.Unit:Byte",
+          "ParameterName": "query_prealloc_size",
+          "ParameterValue": "8192",
+          "runningParameterValue": "8192"
+        },
+        {
+          "CheckingCode": "[1-1024]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "If creating a thread takes longer than this many seconds, the server increments the Slow_launch_threads status variable.",
+          "ParameterName": "slow_launch_time",
+          "ParameterValue": "2",
+          "runningParameterValue": "2"
+        },
+        {
+          "CheckingCode": "(\\s*|REAL_AS_FLOAT|PIPES_AS_CONCAT|ANSI_QUOTES|IGNORE_SPACE|ONLY_FULL_GROUP_BY|NO_UNSIGNED_SUBTRACTION|NO_DIR_IN_CREATE|POSTGRESQL|ORACLE|MSSQL|DB2|MAXDB|NO_KEY_OPTIONS|NO_TABLE_OPTIONS|NO_FIELD_OPTIONS|MYSQL323|MYSQL40|ANSI|NO_AUTO_VALUE_ON_ZERO|NO_BACKSLASH_ESCAPES|STRICT_TRANS_TABLES|STRICT_ALL_TABLES|NO_ZERO_IN_DATE|NO_ZERO_DATE|ALLOW_INVALID_DATES|ERROR_FOR_DIVISION_BY_ZERO|TRADITIONAL|HIGH_NOT_PRECEDENCE|NO_ENGINE_SUBSTITUTION|PAD_CHAR_TO_FULL_LENGTH)(,REAL_AS_FLOAT|,PIPES_AS_CONCAT|,ANSI_QUOTES|,IGNORE_SPACE|,ONLY_FULL_GROUP_BY|,NO_UNSIGNED_SUBTRACTION|,NO_DIR_IN_CREATE|,POSTGRESQL|,ORACLE|,MSSQL|,DB2|,MAXDB|,NO_KEY_OPTIONS|,NO_TABLE_OPTIONS|,NO_FIELD_OPTIONS|,MYSQL323|,MYSQL40|,ANSI|,NO_AUTO_VALUE_ON_ZERO|,NO_BACKSLASH_ESCAPES|,STRICT_TRANS_TABLES|,STRICT_ALL_TABLES|,NO_ZERO_IN_DATE|,NO_ZERO_DATE|,ALLOW_INVALID_DATES|,ERROR_FOR_DIVISION_BY_ZERO|,TRADITIONAL|,HIGH_NOT_PRECEDENCE|,NO_ENGINE_SUBSTITUTION|,PAD_CHAR_TO_FULL_LENGTH)*",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "Modes define what SQL syntax MySQL should support and what kind of data validation checks it should perform.",
+          "ParameterName": "sql_mode",
+          "ParameterValue": "",
+          "runningParameterValue": ""
+        },
+        {
+          "CheckingCode": "[400-4048]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The number of table definitions (from .frm files) that can be stored in the definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache. The minimum and default values are both 400.",
+          "ParameterName": "table_definition_cache",
+          "ParameterValue": "512",
+          "runningParameterValue": "512"
+        },
+        {
+          "CheckingCode": "[1-524288]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires. You can check whether you need to increase the table cache by checking the Opened_tables status variable. See  &ldquo;Server Status Variables&rdquo;. If the value of Opened_tables is large and you do not use FLUSH TABLES often (which just forces all tables to be closed and reopened), then you should increase the value of the table_open_cache variable",
+          "ParameterName": "table_open_cache",
+          "ParameterValue": "2000",
+          "runningParameterValue": "100"
+        },
+        {
+          "CheckingCode": "[262144-67108864]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The maximum size of internal in-memory temporary tables",
+          "ParameterName": "tmp_table_size",
+          "ParameterValue": "2097152",
+          "runningParameterValue": "2097152"
+        },
+        {
+          "CheckingCode": "[READ-COMMITTED|REPEATABLE-READ]",
+          "ForceModify": "true",
+          "ForceRestart": "true",
+          "ParameterDescription": "",
+          "ParameterName": "transaction_isolation",
+          "ParameterValue": "READ-COMMITTED",
+          "runningParameterValue": "READ-COMMITTED"
+        },
+        {
+          "CheckingCode": "[60-259200]",
+          "ForceModify": "true",
+          "ForceRestart": "false",
+          "ParameterDescription": "The number of seconds the server waits for activity on a noninteractive connection before closing it.",
+          "ParameterName": "wait_timeout",
+          "ParameterValue": "86400",
+          "runningParameterValue": "86400"
+        }
+      ]
+    },
+    "RequestId": "0812C841-0E65-42F8-BACE-B52E456D449D"
+  },
+  "requestId": "0812C841-0E65-42F8-BACE-B52E456D449D",
+  "successResponse": true
+}
