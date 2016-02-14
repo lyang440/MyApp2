@@ -8,11 +8,12 @@ import Hello from '../Hello';
 import Test from '../Test';
 import CssLayoutLearn from '../CssLayoutLearn';
 import QcosPortalStep1 from '../QcosPortalStep1';
+import MysqlPortalV1 from '../MysqlPortalV1';
 
 const Main = React.createClass({
   render() {
     return (
-      <QcosPortalStep1/>
+      <MysqlPortalV1/>
     );
   },
 });

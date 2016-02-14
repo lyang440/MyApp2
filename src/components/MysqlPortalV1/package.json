@@ -1,0 +1,6 @@
+{
+  "name": "MysqlPortalV1",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./MysqlPortalV1.js"
+}
