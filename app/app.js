@@ -62,6 +62,7 @@ var TASK_INFO = {
       {
         'type': 'add node',
         'create': 1455524041,
+        'since': 300,
         'process': 100,
         'status': 'success',
         'info': '创建节点'
@@ -69,6 +70,7 @@ var TASK_INFO = {
       {
         'type': 'add node',
         'create': 1455524041,
+        'since': 300,
         'process': 70,
         'status': 'error',
         'info': '创建节点'
@@ -76,6 +78,7 @@ var TASK_INFO = {
       {
         'type': 'add node',
         'create': 1455524041,
+        'since': 300,
         'process': 30,
         'status': 'doing',
         'info': '创建节点'
