@@ -63,7 +63,7 @@ const ParamModification = React.createClass({
           <div className="col-md-3 col-md-offset-9">
             <ButtonToolbar>
               <Button onClick={this.save} bsStyle="primary">保存</Button>
-              <Button onClick={null} bsStyle="primary">撤销</Button>
+              <Button onClick={null} bsStyle="default">撤销</Button>
             </ButtonToolbar>
           </div>
         </div>

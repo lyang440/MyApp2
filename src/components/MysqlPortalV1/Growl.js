@@ -71,6 +71,10 @@ function Growl(message, options) {
   return $alert;
 };
 
+function success(w){
+  Growl(w,{type:'success'})
+};
+
 function info(w){
   Growl(w,{type:'info'})
 };
@@ -84,7 +88,7 @@ function danger(w){
 };
 
 Growl.info = info;
-Growl.success = info;
+Growl.success = success;
 Growl.warning = warning;
 Growl.warn = warning;
 Growl.danger = danger;

@@ -17,9 +17,11 @@ export default React.createClass({
           <Button onClick={
           ()=>{
             debug('ok');
-            Growl('ok');
-            Growl.warning('ok2');
-            Growl.danger('ok3');
+            Growl('default');
+            Growl.success('success');
+            Growl.info('info');
+            Growl.warning('warning');
+            Growl.danger('danger');
           }
         }>
             Test Growl
