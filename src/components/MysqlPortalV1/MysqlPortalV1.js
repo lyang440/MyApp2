@@ -8,6 +8,7 @@ import NodeList from './NodeList.js';
 import ParamModification from './ParamModification.js';
 import LeftPanel from './LeftPanel.js';
 import Test from './Test.js';
+import Task from './Task.js';
 
 const MysqlPortalV1 = React.createClass({
   getInitialState() {
@@ -41,7 +42,7 @@ const MysqlPortalV1 = React.createClass({
       />,
       '操作日志': null,
       '备份': null,
-      '任务': null,
+      '任务': <Task/>,
       Test: <Test/>,
     };
 

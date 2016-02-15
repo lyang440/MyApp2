@@ -54,6 +54,36 @@ var PARAMS_INFO = {
     params:param.data.Parameters.settingParams
   }
 }
+
+var TASK_INFO = {
+  code:200,
+  data:{
+    process:[
+      {
+        'type': 'add node',
+        'create': 1455524041,
+        'process': 100,
+        'status': 'success',
+        'info': '创建节点'
+      },
+      {
+        'type': 'add node',
+        'create': 1455524041,
+        'process': 60,
+        'status': 'error',
+        'info': '创建节点'
+      },
+      {
+        'type': 'add node',
+        'create': 1455524041,
+        'process': 30,
+        'status': 'doing',
+        'info': '创建节点'
+      }
+    ]
+  }
+}
+
 api.get('/v1/app/info', function*(){
   this.body = APP_INFO;
 });
@@ -62,6 +92,9 @@ api.get('/v1/node/info', function*(){
 });
 api.get('/v1/params/info', function*(){
   this.body = PARAMS_INFO;
+});
+api.get('/v1/task/info', function*(){
+  this.body = TASK_INFO;
 });
 
 
