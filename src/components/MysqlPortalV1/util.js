@@ -13,7 +13,7 @@ const fetch = async (url) => new Promise((resolve, reject) => {
     }
     url = API_HOST + url;
   }
-
+  debug('fetch', url);
   $.get(url, res => {
     if (res && res.code === 200) {
       resolve(res.data);

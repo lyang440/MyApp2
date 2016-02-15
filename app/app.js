@@ -69,7 +69,7 @@ var TASK_INFO = {
       {
         'type': 'add node',
         'create': 1455524041,
-        'process': 60,
+        'process': 70,
         'status': 'error',
         'info': '创建节点'
       },
@@ -94,6 +94,7 @@ api.get('/v1/params/info', function*(){
   this.body = PARAMS_INFO;
 });
 api.get('/v1/task/info', function*(){
+  TASK_INFO.data.process[2].process = Math.round(Math.random()*100);
   this.body = TASK_INFO;
 });
 

@@ -1,17 +1,13 @@
 import React from 'react';
 import EditTd from './EditTd.js';
-import { tr, space, debug, notNull } from './util.js';
+import { tr, space, debug, notNull, fetch} from './util.js';
 import { OverlayTrigger, Tooltip, Button, ButtonToolbar } from 'react-bootstrap';
 import Confirm from './Confirm.js';
 import Growl from './Growl.js';
 
 const ParamModification = React.createClass({
-  propTypes: {
-    paramsInfo: React.PropTypes.object.isRequired,
-    onSaveParams: React.PropTypes.func.isRequired,
-  },
   async save() {
-    const r = await this.refs.confirm.run({ title: '保存参数', body: '确认保存?' });
+    const r = await this.refs.confirm.run({title: '保存参数', body: '确认保存?'});
     if (r) {
       debug('save success');
       Growl('保存成功,请在任务列表中查看');
@@ -20,8 +16,26 @@ const ParamModification = React.createClass({
     }
   },
 
+  getInitialState() {
+    return { paramsInfo: [] };
+  },
+
+  onSaveParams(param, value) {
+    debug('onSaveParams', param, value);
+  },
+
+  async componentWillMount() {
+    const paramsInfo = await fetch('/v1/params/info');
+    this.setState({ paramsInfo:paramsInfo.params });
+    debug('load', paramsInfo);
+  },
+
   render() {
-    const { paramsInfo, onSaveParams } = this.props;
+    const { paramsInfo} = this.state;
+    if (paramsInfo.length === 0) {
+      return <h1>Loading...</h1>;
+    }
+
     const tooltip = msg => <Tooltip id={msg}>{tr(msg)}</Tooltip>;
     return (
       <div>
@@ -40,13 +54,13 @@ const ParamModification = React.createClass({
             </thead>
             <tbody>
             {
-              notNull(paramsInfo.params.map((v, i) => {
+              notNull(paramsInfo.map((v, i) => {
                 return (
                   <tr key={i}>
                     <td>{v.ParameterName}</td>
                     <td>{v.ParameterValue}</td>
                     <EditTd text={v.runningParameterValue}
-                            onSave={v => onSaveParams('autocommit2', v)}
+                            onSave={this.onSaveParams}
                     />
                     <td>{tr(v.ForceRestart)}</td>
                     <OverlayTrigger placement="left" overlay={tooltip(v.CheckingCode)}>
