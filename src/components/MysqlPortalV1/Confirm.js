@@ -3,16 +3,17 @@ import {Button, Modal} from 'react-bootstrap';
 import {debug} from './util';
 
 const Confirm = React.createClass({
-  propTypes: {
-    show: React.PropTypes.bool.isRequired,
-    title: React.PropTypes.string.isRequired,
-    body: React.PropTypes.object.isRequired,
-  },
   getInitialState() {
-    return {showModal: false};
+    return {showModal: false, title: '确认?', body: '是否保存?'};
   },
-  async run() {
+  async run(params) {
     return new Promise((resolve, reject) => {
+      if (params && params.title) {
+        this.setState({title: params.title});
+      }
+      if (params && params.body) {
+        this.setState({body: params.body});
+      }
       this.setState({showModal: true});
       this.resolve = resolve;
     });
@@ -28,10 +29,10 @@ const Confirm = React.createClass({
     delete this.resolve;
   },
   render() {
-    const {show, title, body} = this.props;
+    const {showModal, title, body} = this.state;
     const {onSave, onClose} = this;
     return (
-      <Modal show={this.state.showModal} onHide={onClose}>
+      <Modal show={showModal} onHide={onClose}>
         <Modal.Header>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
@@ -50,22 +51,4 @@ const Confirm = React.createClass({
   }
 });
 
-//const Test = React.createClass({
-//  render() {
-//    return (
-//      <div>
-//        <Confirm ref='confirm' title="确认保存" body="确认保存?"/>
-//        <Button
-//          bsStyle="primary"
-//          bsSize="large"
-//          onClick={ async ()=>{
-//            debug('return', await this.refs.confirm.run({title:'aaa',body:'bbb'}))
-//          }}
-//        >
-//          Launch demo modal
-//        </Button>
-//      </div>
-//    )
-//  }
-//});
 export default Confirm;
