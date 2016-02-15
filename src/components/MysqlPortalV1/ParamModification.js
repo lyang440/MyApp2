@@ -3,6 +3,7 @@ import EditTd from './EditTd.js';
 import {tr, space, debug} from './util.js';
 import {OverlayTrigger, Tooltip, Button, ButtonToolbar} from 'react-bootstrap';
 import Confirm from './Confirm.js';
+import Growl from './Growl.js';
 
 const ParamModification = React.createClass({
   propTypes: {
@@ -13,6 +14,7 @@ const ParamModification = React.createClass({
     const r = await this.refs.confirm.run({title:"保存参数",body:"确认保存?"});
     if(r){
       debug('save success');
+      Growl('保存成功,请在任务列表中查看');
     }else{
       debug('cancel save');
     }
