@@ -1,5 +1,5 @@
 import React from 'react';
-import { space } from './util';
+import { space,debug } from './util';
 
 const EditTd = React.createClass({
   propTypes: {
@@ -7,16 +7,27 @@ const EditTd = React.createClass({
     onSave: React.PropTypes.func.isRequired,
   },
   getInitialState() {
-    return { editing: false, value: '' };
+    return {editing: false, value: ''};
   },
 
   onClick() {
-    this.setState({ editing: true, value: this.props.text });
+    this.setState({editing: true, value: this.props.text});
   },
 
   onBlur() {
-    this.setState({ editing: false });
+    this.setState({editing: false});
     this.props.onSave(this.state.value);
+  },
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.editing === false && this.state.editing === true) {
+      if (this.refs.input) {
+        debug('setSelectionRange');
+        const l = this.refs.input.value.length;
+        this.refs.input.setSelectionRange(l, l);
+        this.refs.input.focus();
+      }
+    }
   },
 
   render() {
@@ -27,10 +38,12 @@ const EditTd = React.createClass({
         <td className="edit"
             onBlur={this.onBlur}
         >
-          <input autoFocus
-                 className="form-control"
-                 onChange={e => this.setState({ value: e.target.value })}
-                 value={value}
+          <input
+
+            className="form-control"
+            ref="input"
+            onChange={e => this.setState({ value: e.target.value })}
+            value={value}
           />
         </td>
       );
@@ -46,4 +59,5 @@ const EditTd = React.createClass({
     );
   },
 });
+
 export default EditTd;

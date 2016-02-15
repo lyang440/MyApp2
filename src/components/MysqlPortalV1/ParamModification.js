@@ -20,8 +20,8 @@ const ParamModification = React.createClass({
     return { paramsInfo: [] };
   },
 
-  onSaveParams(param, value) {
-    debug('onSaveParams', param, value);
+  onSaveParams() {
+    debug('onSaveParams');
   },
 
   async componentWillMount() {
