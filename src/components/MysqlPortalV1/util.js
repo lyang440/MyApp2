@@ -35,14 +35,14 @@ const tr = w => {
     false: '否',
   };
   console.assert(_.isString(w));
-  if(w==''){
+  if (w == '') {
     return '无';
   }
-  if(v[w]){
+  if (v[w]) {
     return v[w];
   }
-  if(/^percona-cluster-/.test(w)){
-    return w.replace('percona-cluster-','数据节点');
+  if (/^percona-cluster-/.test(w)) {
+    return w.replace('percona-cluster-', '数据节点');
   }
   return w;
 };
@@ -54,8 +54,8 @@ function notNull(node, msg = <h1>Loading...</h1>) {
   return msg;
 }
 
-function space(n){
-  n=n?n:1;
+function space(n) {
+  n = n ? n : 1;
   return '　'.repeat(n);
 }
 export {debug, fetch, tr, notNull, space};

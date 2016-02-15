@@ -1,22 +1,23 @@
-.root :global{
-  .service-navtabs{
+.root :global {
+  .service-navtabs {
     margin-top: 20px;
   }
-  td.edit-td{
-    width: 144px;
-    height: 26px;
-    padding: 3px 12px;
-    input{
-      width: 120px;
-      height: 26px;
+
+  table{
+    td{
+      overflow: hidden;
+      text-wrap: nowrap;
+      text-overflow: ellipsis;
     }
-  }
-  .params-table{
-    // table-layout: fixed;
-  }
-  td{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
+    td.edit{
+      padding: 3px 12px;
+      width: 144px;
+      height: 26px;
+      line-height: 26px;
+      input {
+        width: 120px;
+        height: 26px;
+      }
+    }
   }
 }
