@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, Button} from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 
 const Alert = React.createClass({
   propTypes: {
@@ -10,7 +10,7 @@ const Alert = React.createClass({
     body: React.PropTypes.object.isRequired,
   },
   render() {
-    const {onClose, onSave, show, title, body} = this.props;
+    const { onClose, onSave, show, title, body } = this.props;
     return (
       <Modal show={show} onHide={onClose}>
         <Modal.Header>
@@ -28,7 +28,7 @@ const Alert = React.createClass({
 
       </Modal>
     );
-  }
+  },
 });
 
 export default Alert;

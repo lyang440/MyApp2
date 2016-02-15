@@ -1,7 +1,7 @@
 import React from 'react';
 import EditTd from './EditTd.js';
-import {tr, space, debug} from './util.js';
-import {OverlayTrigger, Tooltip, Button, ButtonToolbar} from 'react-bootstrap';
+import { tr, space, debug, notNull } from './util.js';
+import { OverlayTrigger, Tooltip, Button, ButtonToolbar } from 'react-bootstrap';
 import Confirm from './Confirm.js';
 import Growl from './Growl.js';
 
@@ -11,20 +11,21 @@ const ParamModification = React.createClass({
     onSaveParams: React.PropTypes.func.isRequired,
   },
   async save() {
-    const r = await this.refs.confirm.run({title:"保存参数",body:"确认保存?"});
-    if(r){
+    const r = await this.refs.confirm.run({ title: '保存参数', body: '确认保存?' });
+    if (r) {
       debug('save success');
       Growl('保存成功,请在任务列表中查看');
-    }else{
+    } else {
       debug('cancel save');
     }
   },
+
   render() {
-    const {paramsInfo, onSaveParams} = this.props;
-    const tooltip = msg=><Tooltip id={msg}>{tr(msg)}</Tooltip>;
+    const { paramsInfo, onSaveParams } = this.props;
+    const tooltip = msg => <Tooltip id={msg}>{tr(msg)}</Tooltip>;
     return (
       <div>
-        <Confirm ref="confirm"></Confirm>
+        <Confirm ref="confirm"/>
         <div className="row">
           <table className="table params-table">
             <thead>
@@ -39,12 +40,14 @@ const ParamModification = React.createClass({
             </thead>
             <tbody>
             {
-              paramsInfo ? paramsInfo.params.map((v, i)=> {
+              notNull(paramsInfo.params.map((v, i) => {
                 return (
                   <tr key={i}>
                     <td>{v.ParameterName}</td>
                     <td>{v.ParameterValue}</td>
-                    <EditTd text={v.runningParameterValue} onSave={v=>onSaveParams('autocommit2', v)}/>
+                    <EditTd text={v.runningParameterValue}
+                            onSave={v => onSaveParams('autocommit2', v)}
+                    />
                     <td>{tr(v.ForceRestart)}</td>
                     <OverlayTrigger placement="left" overlay={tooltip(v.CheckingCode)}>
                       <td>{space(2)}<i className="fa fa-info"/></td>
@@ -54,7 +57,7 @@ const ParamModification = React.createClass({
                     </OverlayTrigger>
                   </tr>
                 );
-              }) : null
+              }))
             }
             </tbody>
           </table>
@@ -70,7 +73,7 @@ const ParamModification = React.createClass({
       </div>
 
     );
-  }
+  },
 });
 
 export default ParamModification;

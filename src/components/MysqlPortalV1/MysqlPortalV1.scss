@@ -3,13 +3,13 @@
     margin-top: 20px;
   }
 
-  table{
-    td{
+  table {
+    td {
       overflow: hidden;
-      text-wrap: nowrap;
+      text-wrap: avoid;
       text-overflow: ellipsis;
     }
-    td.edit{
+    td.edit {
       padding: 3px 12px;
       width: 144px;
       height: 26px;

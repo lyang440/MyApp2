@@ -1,36 +1,41 @@
 import React from 'react';
-import {Button, Modal} from 'react-bootstrap';
-import {debug} from './util';
+import { Button, Modal } from 'react-bootstrap';
 
 const Confirm = React.createClass({
   getInitialState() {
-    return {showModal: false, title: '确认?', body: '是否保存?'};
+    return { showModal: false, title: '确认?', body: '是否保存?' };
   },
-  async run(params) {
-    return new Promise((resolve, reject) => {
-      if (params && params.title) {
-        this.setState({title: params.title});
-      }
-      if (params && params.body) {
-        this.setState({body: params.body});
-      }
-      this.setState({showModal: true});
-      this.resolve = resolve;
-    });
-  },
+
   onSave() {
-    this.setState({showModal: false});
+    this.setState({ showModal: false });
     this.resolve(true);
     delete this.resolve;
   },
+
   onClose() {
-    this.setState({showModal: false});
+    this.setState({ showModal: false });
     this.resolve(false);
     delete this.resolve;
   },
+
+  async run(params) {
+    return new Promise((resolve) => {
+      if (params && params.title) {
+        this.setState({ title: params.title });
+      }
+
+      if (params && params.body) {
+        this.setState({ body: params.body });
+      }
+
+      this.setState({ showModal: true });
+      this.resolve = resolve;
+    });
+  },
+
   render() {
-    const {showModal, title, body} = this.state;
-    const {onSave, onClose} = this;
+    const { showModal, title, body } = this.state;
+    const { onSave, onClose } = this;
     return (
       <Modal show={showModal} onHide={onClose}>
         <Modal.Header>
@@ -48,7 +53,7 @@ const Confirm = React.createClass({
 
       </Modal>
     );
-  }
+  },
 });
 
 export default Confirm;

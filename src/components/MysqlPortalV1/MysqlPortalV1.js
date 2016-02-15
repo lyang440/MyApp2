@@ -2,8 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 import css from './MysqlPortalV1.scss';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Button, Nav, NavItem, Grid, Row, Col, Panel, OverlayTrigger, Tooltip, Modal} from 'react-bootstrap';
-import {debug, fetch, tr, notNull, space} from './util';
+import { Nav, NavItem, Grid, Row, Col, Panel } from 'react-bootstrap';
+import { debug, fetch, tr, notNull, space } from './util';
 import NodeList from './NodeList.js';
 import ParamModification from './ParamModification.js';
 import LeftPanel from './LeftPanel.js';
@@ -11,26 +11,26 @@ import Test from './Test.js';
 
 const MysqlPortalV1 = React.createClass({
   getInitialState() {
-    return {appInfo: {}, nodeInfo: {}, paramsInfo: {}, tabIndex: 0};
+    return { appInfo: {}, nodeInfo: {}, paramsInfo: {}, tabIndex: 0 };
   },
-  async componentDidMount() {
+
+  async componentWillMount() {
     const appInfo = await fetch('/v1/app/info');
-    this.setState({appInfo});
+    this.setState({ appInfo });
     const nodeInfo = await fetch('/v1/node/info');
-    this.setState({nodeInfo});
+    this.setState({ nodeInfo });
     const paramsInfo = await fetch('/v1/params/info');
-    this.setState({paramsInfo});
+    this.setState({ paramsInfo });
     debug('load', appInfo, nodeInfo, paramsInfo);
   },
-  onSaveParams(param, value){
+
+  onSaveParams(param, value) {
     debug('onSaveParams', param, value);
   },
+
   render() {
     debug('render');
-    const {appInfo , tabIndex, nodeInfo, paramsInfo}= this.state;
-
-    const tooltip = msg=><Tooltip id={msg}>{tr(msg)}</Tooltip>;
-    const text = 'The autocommit mode. If set to 1, all changes to a table take effect immediately. If set to 0, you must use COMMIT to accept a transaction or ROLLBACK to cancel it';
+    const { appInfo, tabIndex, nodeInfo, paramsInfo } = this.state;
 
     const Tabs = {
       '节点': <NodeList appInfo={appInfo} nodeInfo={nodeInfo}/>,
@@ -42,7 +42,7 @@ const MysqlPortalV1 = React.createClass({
       '操作日志': null,
       '备份': null,
       '任务': null,
-      'Test': <Test/>,
+      Test: <Test/>,
     };
 
     const Navs = _.keys(Tabs).map((v, index) => {
@@ -59,7 +59,7 @@ const MysqlPortalV1 = React.createClass({
             <Col xs={9}>
               <Nav bsStyle="tabs"
                    activeKey={tabIndex}
-                   onSelect={index=>this.setState({ tabIndex:index })}>
+                   onSelect={tabIndex => this.setState({ tabIndex })}>
                 {Navs}
               </Nav>
               <Panel >

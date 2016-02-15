@@ -1,7 +1,7 @@
 import React from 'react';
-import {Panel} from 'react-bootstrap';
+import { Panel } from 'react-bootstrap';
 
-const LeftPanel = (appInfo)=>(
+const LeftPanel = (appInfo) => (
   <Panel header="基础属性">
     <table className="table">
       <tbody>
