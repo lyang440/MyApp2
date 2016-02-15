@@ -1,9 +1,9 @@
 .root :global {
-  .service-navtabs {
-    margin-top: 20px;
-  }
+  // .service-navtabs {
+  //   margin-top: 20px;
+  // }
 
-  table {
+  table.params-table {
     td {
       overflow: hidden;
       text-wrap: avoid;
@@ -20,4 +20,41 @@
       }
     }
   }
+
+  // // tabs styles
+  // .nav-tabs {
+  //   border-bottom: 1px solid #e1e6f0;
+  //   margin-bottom: 48px;
+  //   li {
+  //     text-align: center;
+  //     a {
+  //       color: #8f9bb3;
+  //       font-weight: 500;
+  //       border: 0;
+  //       border-radius: none;
+  //       padding-right: 0;
+  //       padding-left: 0;
+  //       margin-left: 20px;
+  //       margin-right: 20px;
+  //     }
+  //     a:hover,a:visited,a:focus,a:active {
+  //       background: none;
+  //     }
+  //   }
+  //   li.active {
+  //     a, a:hover, a:focus {
+  //       color: #238efa;
+  //       background-color: transparent;
+  //       border: 0;
+  //       border-bottom: 1px solid #238efa;
+  //     }
+  //   }
+  // }
+
+  // .panel{
+  //   border:none;
+  // }
+  // .nav.nav-tabs{
+  //   margin-bottom: 0;
+  // }
 }
