@@ -65,6 +65,7 @@ function Growl(message, options) {
   $alert.fadeIn();
   if (options.delay > 0) {
     $alert.delay(options.delay).fadeOut(function () {
+      $alert.remove();
     });
   }
   return $alert;
