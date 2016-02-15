@@ -29,10 +29,15 @@ const fetch = async (url) => new Promise((resolve, reject) => {
 const tr = w => {
   const v = {
     'mysql-admin': 'mysql管理节点',
-    perconahaproxy: 'mysql入口',
+    perconahaproxy: 'mysql入口节点',
     normal: '正常',
+    true: '是',
+    false: '否',
   };
   console.assert(_.isString(w));
+  if(w==''){
+    return '无';
+  }
   if(v[w]){
     return v[w];
   }
@@ -48,7 +53,12 @@ function notNull(node, msg = <h1>Loading...</h1>) {
   }
   return msg;
 }
-export {debug, fetch, tr, notNull};
+
+function space(n){
+  n=n?n:1;
+  return '　'.repeat(n);
+}
+export {debug, fetch, tr, notNull, space};
 
 
 

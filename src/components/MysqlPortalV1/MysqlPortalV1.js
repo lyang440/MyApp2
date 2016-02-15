@@ -3,9 +3,34 @@ import _ from 'lodash';
 import css from './MysqlPortalV1.scss';
 import jade from './MysqlPortalV1.jade';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Button, Nav, NavItem, Grid, Row, Col, Panel} from 'react-bootstrap';
-import {debug, fetch, tr, notNull} from './util';
+import { Button, Nav, NavItem, Grid, Row, Col, Panel, OverlayTrigger, Tooltip} from 'react-bootstrap';
+import {debug, fetch, tr, notNull, space} from './util';
 
+//TODO：全局提醒
+
+const EditTd = React.createClass({
+  getInitialState() {
+    return {editing:false, value:''};
+  },
+  onClick(event){
+    this.setState({editing:true, value:this.props.text});
+  },
+  onBlur(event){
+    this.setState({editing:false});
+    this.props.onSave(this.state.value);
+  },
+  render() {
+    const {text} = this.props;
+    const {editing, value} = this.state;
+    if(editing){
+      return <td className="edit-td" onBlur={this.onBlur}><input autoFocus={true} className="form-control edit-td"
+        onChange={e=>this.setState({value:e.target.value})} value={value}
+        /></td>;
+    }else{
+      return <td className="edit-td" onClick={this.onClick}>{text}{space(1)}<i className="fa fa-edit"/></td>;
+    }
+  }
+})
 
 const MysqlPortalV1 = React.createClass({
     getInitialState() {
@@ -21,7 +46,9 @@ const MysqlPortalV1 = React.createClass({
       this.setState({paramsInfo});
       debug('load',appInfo,nodeInfo,paramsInfo);
     },
-
+    onSaveParams(param, value){
+      debug('onSaveParams', param, value);
+    },
     render() {
       debug('render');
       const {appInfo , tabIndex, nodeInfo, paramsInfo}= this.state;
@@ -43,7 +70,7 @@ const MysqlPortalV1 = React.createClass({
         return <tr key={v.key}>
           <td>{tr(key)}</td>
           <td>{v.key}.service.qiniu</td>
-          <td>{v.address}</td>
+          <td>------</td>
           <td>{3306}</td>
           <td>{hit}{tr(v.status)}</td>
         </tr>;
@@ -65,7 +92,43 @@ const MysqlPortalV1 = React.createClass({
         </table>
       );
 
-      const ParamModification = jade.test({paramsInfo});
+      const tooltip = msg=><Tooltip id={msg}>{tr(msg)}</Tooltip>;
+      const text = 'The autocommit mode. If set to 1, all changes to a table take effect immediately. If set to 0, you must use COMMIT to accept a transaction or ROLLBACK to cancel it';
+
+      const ParamModification = (
+        <table className="table params-table">
+          <thead>
+            <tr>
+              <th width="25%">参数名</th>
+              <th>参数默认值</th>
+              <th>运行参数值</th>
+              <th>是否重启</th>
+              <th>可修改参数值</th>
+              <th>参数描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              paramsInfo?paramsInfo.params.map((v,i)=>{
+                return (
+                  <tr key={i}>
+                    <td>{v.ParameterName}</td>
+                    <td>{v.ParameterValue}</td>
+                    <EditTd text={v.runningParameterValue} onSave={v=>this.onSaveParams('autocommit2', v)} />
+                    <td>{tr(v.ForceRestart)}</td>
+                    <OverlayTrigger placement="left" overlay={tooltip(v.CheckingCode)}>
+                      <td>{space(2)}<i className="fa fa-info"/></td>
+                    </OverlayTrigger>
+                    <OverlayTrigger placement="left" overlay={tooltip(v.ParameterDescription)}>
+                      <td>{space(2)}<i className="fa fa-info"/></td>
+                    </OverlayTrigger>
+                  </tr>
+                  );
+              }):null
+            }
+          </tbody>
+        </table>
+        );
 
       const Tabs = {
         '节点': Node,
@@ -86,7 +149,7 @@ const MysqlPortalV1 = React.createClass({
                   <table className="table">
                     <tbody>
                     <tr>
-                      <td>服务标示</td>
+                      <td>应用名称</td>
                       <td>{appInfo.appUri}</td>
                     </tr>
                     <tr>

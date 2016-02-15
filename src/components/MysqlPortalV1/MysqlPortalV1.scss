@@ -2,4 +2,21 @@
   .service-navtabs{
     margin-top: 20px;
   }
+  td.edit-td{
+    width: 144px;
+    height: 26px;
+    padding: 3px 12px;
+    input{
+      width: 120px;
+      height: 26px;
+    }
+  }
+  .params-table{
+    // table-layout: fixed;
+  }
+  td{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+  }
 }
