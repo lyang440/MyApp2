@@ -16,3 +16,4 @@ script:
 - npm install
 - npm run build
 - npm run release
+- ls -al build && ls -al build/public
