@@ -1,10 +1,13 @@
 var logger = require('koa-logger');
 var router = require('koa-router');
+var serve = require('koa-static');
 // var parse = require('co-body');
 var koa = require('koa');
 var app = koa();
 
 app.use(logger());
+
+app.use(serve(__dirname + '/../build/public'));
 
 var api = router();
 
@@ -104,5 +107,5 @@ api.get('/v1/task/info', function*(){
 
 app.use(api.routes()).use(api.allowedMethods());
 app.listen(5000);
-console.log('listening on port 8000');
+console.log('listening on port 5000');
 
