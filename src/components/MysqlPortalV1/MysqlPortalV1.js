@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import $ from 'jquery';
-import css from './MysqlPortalV1.scss';
+import css from './MysqlPortalV1.less';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Nav, NavItem, Grid, Row, Col, Panel } from 'react-bootstrap';
 import { debug, fetch, tr, notNull, space } from './util';

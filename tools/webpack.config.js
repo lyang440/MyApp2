@@ -75,6 +75,15 @@ const config = {
           'postcss-loader?parser=postcss-scss',
         ],
       }, {
+        test: /\.less$/,
+        loaders: [
+          'isomorphic-style-loader',
+          `css-loader?${DEBUG ? 'sourceMap&' : 'minimize&'}modules&localIdentName=` +
+          `${DEBUG ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]'}`,
+          'postcss-loader',
+          'less-loader?noIeCompat',
+        ],
+      }, {
         test: /\.json$/,
         loader: 'json-loader',
       }, {
