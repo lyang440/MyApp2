@@ -18,14 +18,14 @@ require('bootstrap-material-design/dist/css/ripples.css');
 
 const MysqlPortalV1 = React.createClass({
   getInitialState() {
-    return { appInfo: {}, nodeInfo: {}, tabIndex: 0 };
+    return {appInfo: {}, nodeInfo: {}, tabIndex: 0};
   },
 
   async componentWillMount() {
     const appInfo = await fetch('/v1/app/info');
-    this.setState({ appInfo });
+    this.setState({appInfo});
     const nodeInfo = await fetch('/v1/node/info');
-    this.setState({ nodeInfo });
+    this.setState({nodeInfo});
     debug('load', appInfo, nodeInfo);
   },
 
@@ -38,7 +38,7 @@ const MysqlPortalV1 = React.createClass({
       return;
     }
 
-    this.setState({ tabIndex });
+    this.setState({tabIndex});
   },
 
   render() {
@@ -46,7 +46,7 @@ const MysqlPortalV1 = React.createClass({
     const { appInfo, tabIndex, nodeInfo } = this.state;
 
     const Tabs = {
-      '节点': <NodeList appInfo={appInfo} nodeInfo={nodeInfo}/>,
+      '节点': <div>{LeftPanel(appInfo)}<NodeList appInfo={appInfo} nodeInfo={nodeInfo}/></div>,
       '监控': null,
       '参数修改': <ParamModification/>,
       '操作日志': null,
@@ -68,10 +68,7 @@ const MysqlPortalV1 = React.createClass({
       <div className={css.root}>
         <Grid>
           <Row>
-            <Col xs={3}>
-              {LeftPanel(appInfo)}
-            </Col>
-            <Col xs={9}>
+            <Col xs={12}>
               <Nav bsStyle="tabs"
                    activeKey={tabIndex}
                    onSelect={this.onSelect}

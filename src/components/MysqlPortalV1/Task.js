@@ -8,13 +8,13 @@ moment.locale('zh-CN');
 
 export default React.createClass({
   getInitialState() {
-    return { taskInfo: [] };
+    return {taskInfo: []};
   },
 
   async refresh() {
     debug('receive refresh');
     const taskInfo = await fetch('/v1/task/info');
-    this.setState({ taskInfo: taskInfo.process });
+    this.setState({taskInfo: taskInfo.process});
     debug('load', taskInfo);
   },
 

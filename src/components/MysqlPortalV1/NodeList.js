@@ -1,6 +1,7 @@
 import React from 'react';
 import { tr } from './Util.js';
 import _ from 'lodash';
+import { Panel } from 'react-bootstrap';
 
 const NodeList = React.createClass({
   propTypes: {
@@ -9,7 +10,7 @@ const NodeList = React.createClass({
   },
   render() {
     const { appInfo, nodeInfo } = this.props;
-    const tbody = _.map(appInfo.exports, (v, key) => ({ ...v, key })).map(v => {
+    const tbody = _.map(appInfo.exports, (v, key) => ({...v, key})).map(v => {
       const key = v.key.split('.').splice(-1)[0];
       const hit = <span className="fa fa-circle text-success"></span>;
       return (
@@ -23,7 +24,7 @@ const NodeList = React.createClass({
       );
     });
 
-    const tbody2 = _.map(nodeInfo, (v, key) => ({ ...v, key })).map(v => {
+    const tbody2 = _.map(nodeInfo, (v, key) => ({...v, key})).map(v => {
       const key = v.key;
       const hit = <span className="fa fa-circle text-success"></span>;
       return (
@@ -38,18 +39,21 @@ const NodeList = React.createClass({
     });
 
     return (
-      <table className="table">
-        <thead>
-        <tr>
-          <th>服务名称</th>
-          <th>内网域名</th>
-          <th>IP</th>
-          <th>端口协议</th>
-          <th>状态</th>
-        </tr>
-        </thead>
-        <tbody>{tbody}{tbody2}</tbody>
-      </table>
+      <Panel header="基础属性">
+        <table className="table">
+          <thead>
+          <tr>
+            <th>服务名称</th>
+            <th>内网域名</th>
+            <th>IP</th>
+            <th>端口协议</th>
+            <th>状态</th>
+          </tr>
+          </thead>
+          <tbody>{tbody}{tbody2}</tbody>
+        </table>
+      </Panel>
+
     );
   },
 });

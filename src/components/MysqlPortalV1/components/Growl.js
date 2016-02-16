@@ -79,19 +79,19 @@ function Growl(message, options) {
 }
 
 function success(w) {
-  Growl(w, { type: 'success' });
+  Growl(w, {type: 'success'});
 }
 
 function info(w) {
-  Growl(w, { type: 'info' });
+  Growl(w, {type: 'info'});
 }
 
 function warning(w) {
-  Growl(w, { type: 'warning' });
+  Growl(w, {type: 'warning'});
 }
 
 function danger(w) {
-  Growl(w, { type: 'danger' });
+  Growl(w, {type: 'danger'});
 }
 
 Growl.info = info;
