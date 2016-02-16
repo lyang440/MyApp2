@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import React from 'react';
+import Growl from './Growl.js';
 
 const debug = console.debug.bind(console);
 
@@ -19,8 +20,12 @@ const fetch = async (url) => new Promise((resolve, reject) => {
       resolve(res.data);
     } else {
       reject(res);
+      Growl.danger('服务器错误');
     }
-  }).fail(err => reject(err));
+  }).fail(err => {
+    reject(err);
+    Growl.danger('服务器访问失败');
+  });
 });
 
 const tr = w => {
