@@ -2,6 +2,7 @@ import $ from 'jquery';
 import _ from 'lodash';
 import React from 'react';
 import Growl from './Growl.js';
+import NProgress from 'nprogress';
 
 const debug = console.debug.bind(console);
 
@@ -15,7 +16,9 @@ const fetch = async (url) => new Promise((resolve, reject) => {
     url = API_HOST + url;
   }
   debug('fetch', url);
+  NProgress.start();
   $.get(url, res => {
+    NProgress.done();
     if (res && res.code === 200) {
       resolve(res.data);
     } else {
@@ -25,6 +28,12 @@ const fetch = async (url) => new Promise((resolve, reject) => {
   }).fail(err => {
     reject(err);
     Growl.danger('服务器访问失败');
+  });
+});
+
+const sleep = async (time) => new Promise((resolve, reject) => {
+  setTimeout(()=>{
+    resolve()
   });
 });
 
@@ -65,4 +74,4 @@ function space(n) {
   return '　'.repeat(r);
 }
 
-export { debug, fetch, tr, notNull, space };
+export { debug, fetch, tr, notNull, space, sleep };

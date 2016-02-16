@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
-import { debug } from './util.js';
+import { debug, sleep } from './util.js';
 import Growl from './Growl.js';
 import Confirm from './Confirm.js';
+import NProgress from 'nprogress';
 
 export default React.createClass({
   async testConfirm() {
@@ -10,7 +11,11 @@ export default React.createClass({
     debug('return ' + r);
     Growl('return ' + r);
   },
-
+  async testNprogress() {
+    NProgress.start();
+    await sleep(1000);
+    NProgress.done();
+  },
   render() {
     return (
       <div>
@@ -31,6 +36,9 @@ export default React.createClass({
           <Confirm ref="confirm"></Confirm>
           <Button onClick={this.testConfirm}>
             Test Confirm
+          </Button>
+          <Button onClick={this.testNprogress}>
+            Test nprogress
           </Button>
         </ButtonGroup>
       </div>
