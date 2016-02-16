@@ -146,7 +146,10 @@ deps.forEach(function ([name, dep ,resolve], index) {
 // -----------------------------------------------------------------------------
 
 const clientConfig = extend(true, {}, config, {
-  entry: './src/client.js',
+  entry: DEBUG?'./src/client.js':{
+    main: './src/client.js',
+    vendor: ['react', 'react-dom', 'react-router', 'moment', 'react-bootstrap', 'jquery', 'lodash'],
+  },
   output: {
     path: path.join(__dirname, '../build/public'),
     filename: DEBUG ? '[name].js?[hash]' : '[name].[hash].js',
@@ -163,7 +166,12 @@ const clientConfig = extend(true, {}, config, {
       processOutput: x => `module.exports = ${JSON.stringify(x)};`,
     }),
     ...(!DEBUG ? [
+      new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "vendor",
+        minChunks: Infinity,
+      }),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           // jscs:disable requireCamelCaseOrUpperCaseIdentifiers

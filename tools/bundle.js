@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import webpackConfig from './webpack.config';
-
+import child_process from 'child_process';
 /**
  * Creates application bundles from the source files.
  */
@@ -12,6 +12,7 @@ function bundle() {
       }
 
       console.log(stats.toString(webpackConfig[0].stats));
+      child_process.execSync('cd ./build/public && gzip -k -9  `ls main* vendor*`')
       resolve();
     });
   });

@@ -11,3 +11,4 @@ flowcheck-loader https://fakefish.github.io/react-webpack-cookbook/Type-checking
 bootstrap 支持
 
 
+npm run build 失败，进程返回值为0
