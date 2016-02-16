@@ -6,15 +6,15 @@ const EditTd = React.createClass({
     onSave: React.PropTypes.func.isRequired,
   },
   getInitialState() {
-    return {editing: false, value: ''};
+    return { editing: false, value: '' };
   },
 
   onClick() {
-    this.setState({editing: true, value: this.props.text});
+    this.setState({ editing: true, value: this.props.text });
   },
 
   onBlur() {
-    this.setState({editing: false});
+    this.setState({ editing: false });
     this.props.onSave(this.state.value);
   },
 

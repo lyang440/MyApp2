@@ -6,16 +6,15 @@ import { debug, fetch, tr, notNull, space } from './Util.js';
 import moment from 'moment';
 moment.locale('zh-CN');
 
-
 export default React.createClass({
   getInitialState() {
-    return {taskInfo: []};
+    return { taskInfo: [] };
   },
 
-  async refresh (){
+  async refresh() {
     debug('receive refresh');
     const taskInfo = await fetch('/v1/task/info');
-    this.setState({taskInfo: taskInfo.process});
+    this.setState({ taskInfo: taskInfo.process });
     debug('load', taskInfo);
   },
 
@@ -56,9 +55,9 @@ export default React.createClass({
           {
             taskInfo.map((v, i) => {
               const className = {
-                'success': '',
-                'error': 'danger',
-                'doing': 'success'
+                success: '',
+                error: 'danger',
+                doing: 'success',
               }[v.status];
               return (
                 <tr key={i} className={className}>

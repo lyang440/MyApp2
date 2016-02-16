@@ -7,7 +7,7 @@ const content = (num, str) => str.repeat(num);
 
 const QcosPortalStep1 = React.createClass({
   render() {
-    return jade.main({css, content});
+    return jade.main({ css, content });
   },
 });
 

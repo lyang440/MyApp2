@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'lodash';
 import $ from 'jquery';
-import WithContext from "react-with-context"
+import WithContext from 'react-with-context';
 window.React = React;
 window._ = _;
 window.$ = $;
@@ -31,7 +31,4 @@ const context = {
 };
 
 ReactDOM.render(<WithContext context={context}><DOM/></WithContext>, appContainer);
-
-
-
 

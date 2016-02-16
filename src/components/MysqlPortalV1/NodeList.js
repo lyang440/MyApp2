@@ -9,7 +9,7 @@ const NodeList = React.createClass({
   },
   render() {
     const { appInfo, nodeInfo } = this.props;
-    const tbody = _.map(appInfo.exports, (v, key) => ({...v, key})).map(v => {
+    const tbody = _.map(appInfo.exports, (v, key) => ({ ...v, key })).map(v => {
       const key = v.key.split('.').splice(-1)[0];
       const hit = <span className="fa fa-circle text-success"></span>;
       return (
@@ -23,7 +23,7 @@ const NodeList = React.createClass({
       );
     });
 
-    const tbody2 = _.map(nodeInfo, (v, key) => ({...v, key})).map(v => {
+    const tbody2 = _.map(nodeInfo, (v, key) => ({ ...v, key })).map(v => {
       const key = v.key;
       const hit = <span className="fa fa-circle text-success"></span>;
       return (

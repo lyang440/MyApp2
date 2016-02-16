@@ -14,14 +14,14 @@ import Growl from './components/Growl.js';
 
 const MysqlPortalV1 = React.createClass({
   getInitialState() {
-    return {appInfo: {}, nodeInfo: {}, tabIndex: 0};
+    return { appInfo: {}, nodeInfo: {}, tabIndex: 0 };
   },
 
   async componentWillMount() {
     const appInfo = await fetch('/v1/app/info');
-    this.setState({appInfo});
+    this.setState({ appInfo });
     const nodeInfo = await fetch('/v1/node/info');
-    this.setState({nodeInfo});
+    this.setState({ nodeInfo });
     debug('load', appInfo, nodeInfo);
   },
 
@@ -34,8 +34,9 @@ const MysqlPortalV1 = React.createClass({
       return;
     }
 
-    this.setState({tabIndex});
+    this.setState({ tabIndex });
   },
+
   render() {
     debug('render');
     const { appInfo, tabIndex, nodeInfo } = this.state;
@@ -47,12 +48,12 @@ const MysqlPortalV1 = React.createClass({
       '操作日志': null,
       '备份': null,
       '任务': <Task/>,
-      'Test': <Test/>,
+      Test: <Test/>,
       '刷新': null,
     };
 
     const Navs = _.keys(Tabs).map((v, index) => {
-      if (v === "刷新") {
+      if (v === '刷新') {
         return <NavItem key={index} eventKey={-1}>{v}</NavItem>;
       }
 

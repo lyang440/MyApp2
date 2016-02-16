@@ -1,13 +1,13 @@
 import React from 'react';
 import EditTd from './components/EditTd.js';
-import { tr, space, debug, notNull, fetch} from './Util.js';
+import { tr, space, debug, notNull, fetch } from './Util.js';
 import { OverlayTrigger, Tooltip, Button, ButtonToolbar } from 'react-bootstrap';
 import Confirm from './components/Confirm.js';
 import Growl from './components/Growl.js';
 
 const ParamModification = React.createClass({
   async save() {
-    const r = await this.refs.confirm.run({title: '保存参数', body: '确认保存?'});
+    const r = await this.refs.confirm.run({ title: '保存参数', body: '确认保存?' });
     if (r) {
       debug('save success');
       Growl('保存成功,请在任务列表中查看');
@@ -17,7 +17,7 @@ const ParamModification = React.createClass({
   },
 
   getInitialState() {
-    return {paramsInfo: []};
+    return { paramsInfo: [] };
   },
 
   onSaveParams() {
@@ -26,12 +26,12 @@ const ParamModification = React.createClass({
 
   async componentWillMount() {
     const paramsInfo = await fetch('/v1/params/info');
-    this.setState({paramsInfo: paramsInfo.params});
+    this.setState({ paramsInfo: paramsInfo.params });
     debug('load', paramsInfo);
   },
 
   render() {
-    const { paramsInfo} = this.state;
+    const { paramsInfo } = this.state;
     if (paramsInfo.length === 0) {
       return <h1>Loading...</h1>;
     }

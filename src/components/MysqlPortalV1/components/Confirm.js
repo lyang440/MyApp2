@@ -3,17 +3,17 @@ import { Button, Modal } from 'react-bootstrap';
 
 const Confirm = React.createClass({
   getInitialState() {
-    return {showModal: false, title: '确认?', body: '是否保存?'};
+    return { showModal: false, title: '确认?', body: '是否保存?' };
   },
 
   onSave() {
-    this.setState({showModal: false});
+    this.setState({ showModal: false });
     this.resolve(true);
     delete this.resolve;
   },
 
   onClose() {
-    this.setState({showModal: false});
+    this.setState({ showModal: false });
     this.resolve(false);
     delete this.resolve;
   },
@@ -21,14 +21,14 @@ const Confirm = React.createClass({
   async run(params) {
     return new Promise((resolve) => {
       if (params && params.title) {
-        this.setState({title: params.title});
+        this.setState({ title: params.title });
       }
 
       if (params && params.body) {
-        this.setState({body: params.body});
+        this.setState({ body: params.body });
       }
 
-      this.setState({showModal: true});
+      this.setState({ showModal: true });
       this.resolve = resolve;
     });
   },

@@ -1,4 +1,4 @@
-import Nprogress from 'nprogress'
+import Nprogress from 'nprogress';
 require('nprogress/nprogress.css');
 
 export default Nprogress;

@@ -13,8 +13,10 @@ const fetch = async (url) => new Promise((resolve, reject) => {
     if (!_.startsWith(url, '/')) {
       url = '/' + url;
     }
+
     url = API_HOST + url;
   }
+
   debug('fetch', url);
   NProgress.start();
   $.get(url, res => {
@@ -33,7 +35,7 @@ const fetch = async (url) => new Promise((resolve, reject) => {
 });
 
 const sleep = async (time) => new Promise((resolve, reject) => {
-  setTimeout(()=> {
+  setTimeout(() => {
     resolve();
   });
 });
