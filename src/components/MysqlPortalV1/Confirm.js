@@ -47,8 +47,8 @@ const Confirm = React.createClass({
         </Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={onClose}>Close</Button>
-          <Button onClick={onSave} bsStyle="primary">Save changes</Button>
+          <Button onClick={onClose}>取消</Button>
+          <Button onClick={onSave} bsStyle="primary">确认</Button>
         </Modal.Footer>
 
       </Modal>

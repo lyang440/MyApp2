@@ -1,5 +1,6 @@
 import DOM from './components/App/';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import _ from 'lodash';
 import $ from 'jquery';
 import WithContext from "react-with-context"
@@ -29,7 +30,7 @@ const context = {
   },
 };
 
-React.render(<WithContext context={context}><DOM/></WithContext>, appContainer);
+ReactDOM.render(<WithContext context={context}><DOM/></WithContext>, appContainer);
 
 
 

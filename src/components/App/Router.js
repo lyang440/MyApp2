@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 import Main from './Main';
+import Test from './Test';
 
 const DOM = React.createClass({
   render() {
@@ -11,7 +12,8 @@ const DOM = React.createClass({
           <Route name="day" path="/day/:day" component={Main}/>
           <Route name="department" path="/day/:day/dep/:depId" component={Main}/>
         </Route>
-        <Route path="*" component={Main}/>
+        <Route name="/unittest" path="unittest" component={Test}/>
+        <Route path="*" component={null}/>
       </Router>
     );
   },

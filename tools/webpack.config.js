@@ -105,8 +105,8 @@ const config = {
 
 
 var deps = [
-  ['react', 'react/dist/react.min.js', false],
-  ['react-dom', 'react/dist/react.min.js', false],
+  ['react', 'react/dist/react-with-addons.js', false],
+  ['react-dom', 'react-dom/dist/react-dom.js', true],
   ['react-router', 'react-router/umd/ReactRouter.js', true],
   ['jquery', 'jquery/dist/jquery.min.js', false],
   ['moment', 'moment/min/moment.min.js', false],
