@@ -7,7 +7,7 @@ const Alert = React.createClass({
     onSave: React.PropTypes.func.isRequired,
     show: React.PropTypes.bool.isRequired,
     title: React.PropTypes.string.isRequired,
-    body: React.PropTypes.object.isRequired,
+    body: React.PropTypes.any.isRequired,
   },
   render() {
     const { onClose, onSave, show, title, body } = this.props;

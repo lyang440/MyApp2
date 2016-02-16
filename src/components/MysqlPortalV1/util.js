@@ -33,8 +33,8 @@ const fetch = async (url) => new Promise((resolve, reject) => {
 });
 
 const sleep = async (time) => new Promise((resolve, reject) => {
-  setTimeout(()=>{
-    resolve()
+  setTimeout(()=> {
+    resolve();
   });
 });
 

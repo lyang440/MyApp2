@@ -34,7 +34,7 @@ const MysqlPortalV1 = React.createClass({
       return;
     }
 
-    this.setState({ tabIndex });
+    this.setState({tabIndex});
   },
   render() {
     debug('render');
@@ -53,7 +53,7 @@ const MysqlPortalV1 = React.createClass({
 
     const Navs = _.keys(Tabs).map((v, index) => {
       if (v === "刷新") {
-        return <NavItem key={index} eventKey={-1} >{v}</NavItem>;
+        return <NavItem key={index} eventKey={-1}>{v}</NavItem>;
       }
 
       return <NavItem key={index} eventKey={index}>{v}</NavItem>;

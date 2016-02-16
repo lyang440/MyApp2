@@ -17,7 +17,7 @@ const ParamModification = React.createClass({
   },
 
   getInitialState() {
-    return { paramsInfo: [] };
+    return {paramsInfo: []};
   },
 
   onSaveParams() {
@@ -26,7 +26,7 @@ const ParamModification = React.createClass({
 
   async componentWillMount() {
     const paramsInfo = await fetch('/v1/params/info');
-    this.setState({ paramsInfo:paramsInfo.params });
+    this.setState({paramsInfo: paramsInfo.params});
     debug('load', paramsInfo);
   },
 
