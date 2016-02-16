@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/wangkechun/MyApp2.svg?branch=master)](https://travis-ci.org/wangkechun/MyApp2)
+
 scss 运算问题
 windows失败问题
 
