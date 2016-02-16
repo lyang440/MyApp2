@@ -12,7 +12,7 @@ function bundle() {
       }
 
       console.log(stats.toString(webpackConfig[0].stats));
-      child_process.execSync('cd ./build/public && gzip -k -9  `ls main* vendor*`')
+      child_process.execSync('cd ./build/public && gzip --keep -9  `ls main* vendor*`')
       resolve();
     });
   });
