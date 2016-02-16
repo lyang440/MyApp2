@@ -1,5 +1,4 @@
 import React from 'react';
-import { space,debug } from './util';
 
 const EditTd = React.createClass({
   propTypes: {
@@ -22,7 +21,6 @@ const EditTd = React.createClass({
   componentDidUpdate(prevProps, prevState) {
     if (prevState.editing === false && this.state.editing === true) {
       if (this.refs.input) {
-        debug('setSelectionRange');
         const l = this.refs.input.value.length;
         this.refs.input.setSelectionRange(l, l);
         this.refs.input.focus();
@@ -53,7 +51,7 @@ const EditTd = React.createClass({
       <td className="edit"
           onClick={this.onClick}
       >
-        {text}{space(1)}
+        {text}{'　'}
         <i className="fa fa-edit"/>
       </td>
     );

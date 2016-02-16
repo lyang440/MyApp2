@@ -1,9 +1,9 @@
 import React from 'react';
-import EditTd from './EditTd.js';
-import { tr, space, debug, notNull, fetch} from './util.js';
+import EditTd from './components/EditTd.js';
+import { tr, space, debug, notNull, fetch} from './Util.js';
 import { OverlayTrigger, Tooltip, Button, ButtonToolbar } from 'react-bootstrap';
-import Confirm from './Confirm.js';
-import Growl from './Growl.js';
+import Confirm from './components/Confirm.js';
+import Growl from './components/Growl.js';
 
 const ParamModification = React.createClass({
   async save() {

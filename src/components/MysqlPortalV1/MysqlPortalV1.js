@@ -4,13 +4,13 @@ import $ from 'jquery';
 import css from './MysqlPortalV1.less';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Nav, NavItem, Grid, Row, Col, Panel } from 'react-bootstrap';
-import { debug, fetch, tr, notNull, space } from './util';
+import { debug, fetch, tr, notNull, space } from './Util.js';
 import NodeList from './NodeList.js';
 import ParamModification from './ParamModification.js';
 import LeftPanel from './LeftPanel.js';
 import Test from './Test.js';
 import Task from './Task.js';
-import Growl from './Growl.js';
+import Growl from './components/Growl.js';
 
 const MysqlPortalV1 = React.createClass({
   getInitialState() {

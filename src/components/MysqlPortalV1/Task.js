@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import $ from 'jquery';
 import { Nav, NavItem, Grid, Row, Col, Panel, ProgressBar } from 'react-bootstrap';
-import { debug, fetch, tr, notNull, space } from './util';
+import { debug, fetch, tr, notNull, space } from './Util.js';
 import moment from 'moment';
 moment.locale('zh-CN');
 

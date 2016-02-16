@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import React from 'react';
-import Growl from './Growl.js';
-import NProgress from './Nprogress';
+import Growl from './components/Growl.js';
+import NProgress from './components/Nprogress.js';
 
 const debug = console.debug.bind(console);
 

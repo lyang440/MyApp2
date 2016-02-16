@@ -1,5 +1,5 @@
 import React from 'react';
-import { tr } from './util';
+import { tr } from './Util.js';
 import _ from 'lodash';
 
 const NodeList = React.createClass({
