@@ -12,6 +12,10 @@ import Test from './Test.js';
 import Task from './Task.js';
 import Growl from './components/Growl.js';
 
+
+require('bootstrap-material-design/dist/css/bootstrap-material-design.css');
+require('bootstrap-material-design/dist/css/ripples.css');
+
 const MysqlPortalV1 = React.createClass({
   getInitialState() {
     return { appInfo: {}, nodeInfo: {}, tabIndex: 0 };
