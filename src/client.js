@@ -1,8 +1,11 @@
 import DOM from './components/App/';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import _ from 'lodash';
+import $ from 'jquery';
 import WithContext from "react-with-context"
-
+window.React = React;
+window._ = _;
+window.$ = $;
 
 let cssContainer = document.getElementById('css');
 const appContainer = document.getElementById('app');
@@ -26,9 +29,8 @@ const context = {
   },
 };
 
-ReactDOM.render(<WithContext context={context}><DOM/></WithContext>, appContainer);
+React.render(<WithContext context={context}><DOM/></WithContext>, appContainer);
 
 
-window.React = React;
-window.ReactDOM = ReactDOM;
+
 

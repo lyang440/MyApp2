@@ -25,6 +25,8 @@ const GLOBALS = {
 // client-side (client.js) and server-side (server.js) bundles
 // -----------------------------------------------------------------------------
 
+var node_modules_dir = path.join(__dirname, '/../node_modules');
+
 const config = {
   output: {
     publicPath: '/',
@@ -52,6 +54,8 @@ const config = {
 
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.json'],
+    alias:{},
+    unsafeCache:[],
   },
 
   module: {
@@ -87,6 +91,7 @@ const config = {
         loader: "wkc-react-jade-loader?split=true",
       },
     ],
+    noParse:[],
   },
 
   postcss: function plugins(bundler) {
@@ -97,6 +102,28 @@ const config = {
     ];
   },
 };
+
+
+var deps = [
+  ['react', 'react/dist/react.min.js', false],
+  ['react-dom', 'react/dist/react.min.js', false],
+  ['react-router', 'react-router/umd/ReactRouter.js', true],
+  ['jquery', 'jquery/dist/jquery.min.js', false],
+  ['moment', 'moment/min/moment.min.js', false],
+  ['react-bootstrap', 'react-bootstrap/dist/react-bootstrap.js', true],
+];
+
+
+deps.forEach(function ([name, dep ,resolve], index) {
+  var depPath = path.resolve(node_modules_dir, dep);
+  config.resolve.alias[name] = depPath;
+  if(!resolve){
+    config.module.noParse.push(depPath);
+  }
+});
+
+// var util = require('util');
+// console.log(util.inspect(config));
 
 //
 // Configuration for the client-side bundle (client.js)

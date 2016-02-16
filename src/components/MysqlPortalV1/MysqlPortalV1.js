@@ -47,8 +47,8 @@ const MysqlPortalV1 = React.createClass({
       '操作日志': null,
       '备份': null,
       '任务': <Task/>,
-      Test: <Test/>,
-      刷新: null,
+      'Test': <Test/>,
+      '刷新': null,
     };
 
     const Navs = _.keys(Tabs).map((v, index) => {
