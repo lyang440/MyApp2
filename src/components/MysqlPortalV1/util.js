@@ -2,7 +2,7 @@ import $ from 'jquery';
 import _ from 'lodash';
 import React from 'react';
 import Growl from './Growl.js';
-import NProgress from 'nprogress';
+import NProgress from './Nprogress';
 
 const debug = console.debug.bind(console);
 
@@ -26,6 +26,7 @@ const fetch = async (url) => new Promise((resolve, reject) => {
       Growl.danger('服务器错误');
     }
   }).fail(err => {
+    NProgress.done();
     reject(err);
     Growl.danger('服务器访问失败');
   });

@@ -84,6 +84,13 @@ const config = {
           'less-loader?noIeCompat',
         ],
       }, {
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          `css-loader?${DEBUG ? 'sourceMap&' : 'minimize&'}modules` +
+          `${DEBUG ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]'}`,
+        ],
+      }, {
         test: /\.json$/,
         loader: 'json-loader',
       }, {

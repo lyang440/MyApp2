@@ -3,7 +3,7 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 import { debug, sleep } from './util.js';
 import Growl from './Growl.js';
 import Confirm from './Confirm.js';
-import NProgress from 'nprogress';
+import NProgress from './Nprogress.js';
 
 export default React.createClass({
   async testConfirm() {
