@@ -19,6 +19,7 @@ function runServer(cb) {
   });
 
   server.stderr.on('data', x => process.stderr.write(x));
+  server.stdout.on('data', x => process.stdout.write(x));
 }
 
 process.on('exit', () => {

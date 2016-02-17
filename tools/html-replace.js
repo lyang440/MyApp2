@@ -15,10 +15,12 @@ async function replace() {
   html = html.replace('main.js', fileNew);
 
   files = await glob('./build/public/vendor*.js');
-  assert.equal(files.length, 1);
-  file = files[0];
-  fileNew = /vendor.*/.exec(file)[0];
-  html = html.replace('vendor.js', fileNew);
+  if (files.length > 0){
+    assert(files.length, 1);
+    file = files[0];
+    fileNew = /vendor.*/.exec(file)[0];
+    html = html.replace('vendor.js', fileNew);
+  }
 
   fs.writeFileSync('./build/public/index.html', html);
 }
