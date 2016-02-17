@@ -33,7 +33,7 @@ const ParamModification = React.createClass({
   render() {
     const { paramsInfo } = this.state;
     if (paramsInfo.length === 0) {
-      return <h1>Loading...</h1>;
+      return notNull();
     }
 
     const tooltip = msg => <Tooltip id={msg}>{tr(msg)}</Tooltip>;

@@ -3,6 +3,7 @@ import _ from 'lodash';
 import React from 'react';
 import Growl from './components/Growl.js';
 import NProgress from './components/Nprogress.js';
+import Loader from 'halogen/GridLoader';
 
 const debug = console.debug.bind(console);
 
@@ -64,12 +65,20 @@ const tr = w => {
   return w;
 };
 
-function notNull(node, msg = <h1>Loading...</h1>) {
+const loader = (
+  <div className="loader">
+    <Loader color="#26A65B" size={30}/>
+  </div>
+);
+
+function notNull(node, msg) {
   if (node) {
     return node;
   }
-
-  return msg;
+  if (msg) {
+    return msg;
+  }
+  return loader;
 }
 
 function space(n) {
