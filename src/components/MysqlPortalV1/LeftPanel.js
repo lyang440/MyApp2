@@ -3,7 +3,7 @@ import { Panel } from 'react-bootstrap';
 
 const LeftPanel = (appInfo) => (
   <Panel header="基础属性">
-    <table className="table">
+    <table className="table table-striped">
       <tbody>
       <tr>
         <td>应用名称</td>

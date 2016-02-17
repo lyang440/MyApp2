@@ -1,7 +1,7 @@
 import React from 'react';
 import { tr } from './Util.js';
 import _ from 'lodash';
-import { Panel } from 'react-bootstrap';
+import { Panel, ButtonToolbar, Button } from 'react-bootstrap';
 
 const NodeList = React.createClass({
   propTypes: {
@@ -10,7 +10,7 @@ const NodeList = React.createClass({
   },
   render() {
     const { appInfo, nodeInfo } = this.props;
-    const tbody = _.map(appInfo.exports, (v, key) => ({...v, key})).map(v => {
+    const tbody = _.map(appInfo.exports, (v, key) => ({ ...v, key })).map(v => {
       const key = v.key.split('.').splice(-1)[0];
       const hit = <span className="fa fa-circle text-success"></span>;
       return (
@@ -24,7 +24,7 @@ const NodeList = React.createClass({
       );
     });
 
-    const tbody2 = _.map(nodeInfo, (v, key) => ({...v, key})).map(v => {
+    const tbody2 = _.map(nodeInfo, (v, key) => ({ ...v, key })).map(v => {
       const key = v.key;
       const hit = <span className="fa fa-circle text-success"></span>;
       return (
@@ -37,10 +37,15 @@ const NodeList = React.createClass({
         </tr>
       );
     });
-
+    const header = (
+      <div>
+        <span>基础属性</span>
+      </div>
+    );
     return (
-      <Panel header="基础属性">
-        <table className="table">
+      <Panel header={header}>
+
+        <table className="table table-striped">
           <thead>
           <tr>
             <th>服务名称</th>

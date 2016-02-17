@@ -3,6 +3,7 @@ import _ from 'lodash';
 import $ from 'jquery';
 import { Nav, NavItem, Grid, Row, Col, Panel, ProgressBar } from 'react-bootstrap';
 import { debug, fetch, tr, notNull, space } from './Util.js';
+import Growl from './components/Growl.js';
 import moment from 'moment';
 moment.locale('zh-CN');
 
@@ -38,43 +39,56 @@ export default React.createClass({
         </div>
       );
     });
-    return (
+    const table = (
+      <table className="table task-table table-bordered">
+        <thead>
+        <tr>
+          <th>任务类型</th>
+          <th>描述</th>
+          <th>状态</th>
+          <th>进度</th>
+          <th>启动时间</th>
+          <th>已用时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        {
+          taskInfo.map((v, i) => {
+            const className = {
+              success: '',
+              error: 'danger',
+              doing: 'success',
+            }[v.status];
+            return (
+              <tr key={i} className={className}>
+                <td>{v.type}</td>
+                <td>{v.info}</td>
+                <td>{v.status}</td>
+                <td>{v.process}%</td>
+                <td>{moment.unix(v.create).toNow()}</td>
+                <td>{moment.duration(v.since, 'second').humanize()}</td>
+              </tr>
+            );
+          })
+        }
+        </tbody>
+      </table>
+
+    );
+    const header = (
       <div>
-        <table className="table task-table table-bordered">
-          <thead>
-          <tr>
-            <th>任务类型</th>
-            <th>描述</th>
-            <th>状态</th>
-            <th>进度</th>
-            <th>启动时间</th>
-            <th>已用时间</th>
-          </tr>
-          </thead>
-          <tbody>
-          {
-            taskInfo.map((v, i) => {
-              const className = {
-                success: '',
-                error: 'danger',
-                doing: 'success',
-              }[v.status];
-              return (
-                <tr key={i} className={className}>
-                  <td>{v.type}</td>
-                  <td>{v.info}</td>
-                  <td>{v.status}</td>
-                  <td>{v.process}%</td>
-                  <td>{moment.unix(v.create).toNow()}</td>
-                  <td>{moment.duration(v.since, 'second').humanize()}</td>
-                </tr>
-              );
-            })
-          }
-          </tbody>
-        </table>
+        <span>操作日志</span>
+        <span className="pull-right"><a onClick={()=>{
+        $(document).trigger('GLOBAL_REFRESH');
+      Growl.success('刷新成功');
+        }}>刷新</a></span>
       </div>
 
+    );
+    return (
+      <Panel header={header}>
+        {table}
+      </Panel>
     );
   },
 });

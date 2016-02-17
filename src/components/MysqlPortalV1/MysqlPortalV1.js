@@ -12,20 +12,19 @@ import Test from './Test.js';
 import Task from './Task.js';
 import Growl from './components/Growl.js';
 
-
 require('bootstrap-material-design/dist/css/bootstrap-material-design.css');
 require('bootstrap-material-design/dist/css/ripples.css');
 
 const MysqlPortalV1 = React.createClass({
   getInitialState() {
-    return {appInfo: {}, nodeInfo: {}, tabIndex: 0};
+    return { appInfo: {}, nodeInfo: {}, tabIndex: 0 };
   },
 
   async componentWillMount() {
     const appInfo = await fetch('/v1/app/info');
-    this.setState({appInfo});
+    this.setState({ appInfo });
     const nodeInfo = await fetch('/v1/node/info');
-    this.setState({nodeInfo});
+    this.setState({ nodeInfo });
     debug('load', appInfo, nodeInfo);
   },
 
@@ -38,7 +37,7 @@ const MysqlPortalV1 = React.createClass({
       return;
     }
 
-    this.setState({tabIndex});
+    this.setState({ tabIndex });
   },
 
   render() {
@@ -47,11 +46,11 @@ const MysqlPortalV1 = React.createClass({
 
     const Tabs = {
       '节点': <div>{LeftPanel(appInfo)}<NodeList appInfo={appInfo} nodeInfo={nodeInfo}/></div>,
-      '监控': null,
       '参数修改': <ParamModification/>,
+      '任务': <Task/>,
+      '监控': null,
       '操作日志': null,
       '备份': null,
-      '任务': <Task/>,
       Test: <Test/>,
       '刷新': null,
     };
