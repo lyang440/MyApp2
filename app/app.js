@@ -90,6 +90,15 @@ var TASK_INFO = {
   }
 }
 
+
+
+api.all('*', function*(next){
+  yield next;
+  this.set('Access-Control-Allow-Methods', 'POST');
+  this.set('Access-Control-Allow-Origin', '*');
+  this.set('Access-Control-Allow-Headers', 'Content-type');
+})
+
 api.get('/v1/app/info', function*(){
   this.body = APP_INFO;
 });
@@ -106,6 +115,7 @@ api.get('/v1/task/info', function*(){
 
 
 app.use(api.routes()).use(api.allowedMethods());
+
 app.listen(5000);
 console.log('listening on port 5000');
 
