@@ -3,7 +3,6 @@ import _ from 'lodash';
 import React from 'react';
 import Growl from './components/Growl.js';
 import NProgress from './components/Nprogress.js';
-import Loader from 'halogen/GridLoader';
 
 const debug = console.debug.bind(console);
 
@@ -67,7 +66,7 @@ const tr = w => {
 
 const loader = (
   <div className="loader">
-    <Loader color="#26A65B" size={30}/>
+    <i className="fa fa-spinner fa-spin" style={{ fontSize:120, color:'#26a65b' }}/>
   </div>
 );
 

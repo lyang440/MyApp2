@@ -45,23 +45,24 @@ const MysqlPortalV1 = React.createClass({
     const { appInfo, tabIndex, nodeInfo } = this.state;
 
     const Tabs = {
-      '节点': <div>{LeftPanel(appInfo)}<NodeList appInfo={appInfo} nodeInfo={nodeInfo}/></div>,
-      '参数修改': <ParamModification/>,
-      '任务': <Task/>,
-      '监控': null,
-      '操作日志': null,
-      '备份': null,
-      '控制台': null,
+      '节点 cubes': <div>{LeftPanel(appInfo)}<NodeList appInfo={appInfo} nodeInfo={nodeInfo}/></div>,
+      '参数修改 edit': <ParamModification/>,
+      '任务 tasks': <Task/>,
+      '监控 tv': null,
+      '操作日志 file-text': null,
+      '备份 cloud-upload': null,
+      '控制台 terminal': null,
+      '刷新 refresh': null,
       Test: <Test/>,
-      '刷新': null,
     };
 
     const Navs = _.keys(Tabs).map((v, index) => {
       if (v === '刷新') {
-        return <NavItem key={index} eventKey={-1}>{v}</NavItem>;
+        return <NavItem key={index} eventKey={-1}><i className="fa fa-refresh"></i>{v}</NavItem>;
       }
-
-      return <NavItem key={index} eventKey={index}>{v}</NavItem>;
+      const [name, icon] = v.split(' ');
+      debug(name, icon);
+      return <NavItem key={index} eventKey={index}><i className={"fa fa-fw fa-"+icon}></i>{name}</NavItem>;
     });
 
     return (

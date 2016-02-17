@@ -22,8 +22,8 @@ const Alert = React.createClass({
         </Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={onClose}>Close</Button>
-          <Button onClick={onSave} bsStyle="primary">Save changes</Button>
+          <Button onClick={onClose} className="btn-raised">Close</Button>
+          <Button onClick={onSave} bsStyle="primary" className="btn-raised">Save changes</Button>
         </Modal.Footer>
 
       </Modal>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
-import { debug, sleep } from './Util.js';
+import { debug, sleep, notNull } from './Util.js';
 import Growl from './components/Growl.js';
 import Confirm from './components/Confirm.js';
 import NProgress from './components/Nprogress.js';
@@ -8,7 +8,7 @@ import Alert from './components/Alert.js';
 
 export default React.createClass({
   getInitialState() {
-    return { alert: false };
+    return {alert: false};
   },
 
   async testConfirm() {
@@ -25,7 +25,7 @@ export default React.createClass({
 
   async testAlert() {
     debug('testAlert');
-    this.setState({ alert: !this.state.alert });
+    this.setState({alert: !this.state.alert});
   },
 
   render() {
@@ -61,6 +61,8 @@ export default React.createClass({
                onClose={() => Growl('onClose') + this.testAlert()}
                onSave={() => Growl('onSave') + this.testAlert()}
         />
+        <div>
+        </div>
       </div>
     );
   },

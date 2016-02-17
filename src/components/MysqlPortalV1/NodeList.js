@@ -10,9 +10,9 @@ const NodeList = React.createClass({
   },
   render() {
     const { appInfo, nodeInfo } = this.props;
+    const hit = <span className="fa fa-cog fa-spin text-success"></span>;
     const tbody = _.map(appInfo.exports, (v, key) => ({ ...v, key })).map(v => {
       const key = v.key.split('.').splice(-1)[0];
-      const hit = <span className="fa fa-circle text-success"></span>;
       return (
         <tr key={v.key}>
           <td>{tr(key)}</td>
@@ -26,7 +26,6 @@ const NodeList = React.createClass({
 
     const tbody2 = _.map(nodeInfo, (v, key) => ({ ...v, key })).map(v => {
       const key = v.key;
-      const hit = <span className="fa fa-circle text-success"></span>;
       return (
         <tr key={v.key}>
           <td>{tr(key)}</td>
@@ -39,7 +38,7 @@ const NodeList = React.createClass({
     });
     const header = (
       <div>
-        <span>基础属性</span>
+        <span>节点信息</span>
       </div>
     );
     return (
