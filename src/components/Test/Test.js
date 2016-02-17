@@ -1,7 +1,6 @@
 import React from 'react';
 import css from './Test.scss';
 import jade from './Test.jade';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 const Test = React.createClass({
   render() {
@@ -9,4 +8,4 @@ const Test = React.createClass({
   },
 });
 
-export default withStyles(Test, css);
+export default Test;

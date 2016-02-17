@@ -69,7 +69,7 @@ const config = {
       }, {
         test: /\.scss$/,
         loaders: [
-          'isomorphic-style-loader',
+          'style-loader',
           `css-loader?${DEBUG ? 'sourceMap&' : 'minimize&'}modules&localIdentName=` +
           `${DEBUG ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]'}`,
           'postcss-loader?parser=postcss-scss',
@@ -77,7 +77,7 @@ const config = {
       }, {
         test: /\.less$/,
         loaders: [
-          'isomorphic-style-loader',
+          'style-loader',
           `css-loader?${DEBUG ? 'sourceMap&' : 'minimize&'}modules&localIdentName=` +
           `${DEBUG ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]'}`,
           'postcss-loader',
@@ -152,7 +152,7 @@ const clientConfig = extend(true, {}, config, {
   },
   output: {
     path: path.join(__dirname, '../build/public'),
-    filename: DEBUG ? '[name].js?[hash]' : '[name].[hash].js',
+    filename: DEBUG ? '[name].js?[hash]' : '[name].@cache@[hash].js',
   },
 
   // Choose a developer tool to enhance debugging

@@ -2,7 +2,6 @@ import React from 'react';
 import _ from 'lodash';
 import $ from 'jquery';
 import css from './MysqlPortalV1.less';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Nav, NavItem, Grid, Row, Col, Panel } from 'react-bootstrap';
 import { debug, fetch, tr, notNull, space } from './Util.js';
 import NodeList from './NodeList.js';
@@ -87,4 +86,4 @@ const MysqlPortalV1 = React.createClass({
   },
 });
 
-export default withStyles(MysqlPortalV1, css);
+export default MysqlPortalV1;

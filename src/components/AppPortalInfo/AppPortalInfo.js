@@ -1,7 +1,6 @@
 import React from 'react';
 import css from './AppPortalInfo.scss';
 import jade from './AppPortalInfo.jade';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import _ from 'lodash';
 
 const data = require('./data.json');
@@ -25,4 +24,4 @@ const AppPortalInfo = React.createClass({
   },
 });
 
-export default withStyles(AppPortalInfo, css);
+export default AppPortalInfo;
