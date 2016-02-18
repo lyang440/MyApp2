@@ -9,7 +9,7 @@ app.use(logger());
 
 app.use(serve(__dirname + '/../build/public'));
 
-var api = router();
+var api = new router({prefix: '/v1'});
 
 var param = require('./param.json');
 
@@ -99,16 +99,16 @@ api.all('*', function*(next){
   this.set('Access-Control-Allow-Headers', 'Content-type');
 })
 
-api.get('/v1/app/info', function*(){
+api.get('/app/info', function*(){
   this.body = APP_INFO;
 });
-api.get('/v1/node/info', function*(){
+api.get('/node/info', function*(){
   this.body = NODE_INFO;
 });
-api.get('/v1/params/info', function*(){
+api.get('/params/info', function*(){
   this.body = PARAMS_INFO;
 });
-api.get('/v1/task/info', function*(){
+api.get('/task/info', function*(){
   TASK_INFO.data.process[2].process = Math.round(Math.random()*100);
   this.body = TASK_INFO;
 });
