@@ -11,4 +11,4 @@ const QcosPortalStep1 = React.createClass({
   },
 });
 
-export default QcosPortalStep1;
+export default withStyles(QcosPortalStep1, css);

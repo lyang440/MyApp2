@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './Snake.scss';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import _ from 'lodash';
 
 const ACTION_X = [9, -1, +1, 0, 0];
@@ -180,4 +181,4 @@ const Snake = React.createClass({
   },
 });
 
-export default Snake;
+export default withStyles(Snake, css);

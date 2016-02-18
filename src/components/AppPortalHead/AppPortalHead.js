@@ -1,6 +1,7 @@
 import React from 'react';
 import css from './AppPortalHead.scss';
 import jade from './AppPortalHead.jade';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 const AppPortalHead = React.createClass({
   render() {
@@ -8,4 +9,4 @@ const AppPortalHead = React.createClass({
   },
 });
 
-export default AppPortalHead;
+export default withStyles(AppPortalHead, css);

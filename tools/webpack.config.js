@@ -69,7 +69,7 @@ const config = {
       }, {
         test: /\.scss$/,
         loaders: [
-          'style-loader',
+          'isomorphic-style-loader',
           `css-loader?${DEBUG ? 'sourceMap&' : 'minimize&'}modules&localIdentName=` +
           `${DEBUG ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]'}`,
           'postcss-loader?parser=postcss-scss',
@@ -77,7 +77,7 @@ const config = {
       }, {
         test: /\.less$/,
         loaders: [
-          'style-loader',
+          'isomorphic-style-loader',
           `css-loader?${DEBUG ? 'sourceMap&' : 'minimize&'}modules&localIdentName=` +
           `${DEBUG ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]'}`,
           'postcss-loader',
