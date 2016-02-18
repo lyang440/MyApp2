@@ -59,9 +59,10 @@ const MysqlPortalV1 = React.createClass({
       if (v === '刷新') {
         return <NavItem key={index} eventKey={-1}><i className="fa fa-refresh"></i>{v}</NavItem>;
       }
+
       const [name, icon] = v.split(' ');
       debug(name, icon);
-      return <NavItem key={index} eventKey={index}><i className={"fa fa-fw fa-"+icon}></i>{name}</NavItem>;
+      return <NavItem key={index} eventKey={index}><i className={'fa fa-fw fa-' + icon}></i>{name}</NavItem>;
     });
 
     return (

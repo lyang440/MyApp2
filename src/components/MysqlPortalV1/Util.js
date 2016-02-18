@@ -4,7 +4,7 @@ import React from 'react';
 import Growl from './components/Growl.js';
 import NProgress from './components/Nprogress.js';
 
-const debug = (document.location.hostname == 'l' || document.location.hostname == 'localhost')?console.debug.bind(console):function(){};
+const debug = (document.location.hostname === 'l' || document.location.hostname === 'localhost') ? console.debug.bind(console) : function () {};
 
 const API_HOST = 'http://localhost:5000';
 
@@ -74,9 +74,11 @@ function notNull(node, msg) {
   if (node) {
     return node;
   }
+
   if (msg) {
     return msg;
   }
+
   return loader;
 }
 
