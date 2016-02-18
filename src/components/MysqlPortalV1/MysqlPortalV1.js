@@ -16,14 +16,19 @@ require('bootstrap-material-design/dist/css/ripples.css');
 
 const MysqlPortalV1 = React.createClass({
   getInitialState() {
-    return { appInfo: {}, nodeInfo: {}, tabIndex: 0 };
+    return {appInfo: {}, nodeInfo: {}, tabIndex: 0};
   },
-
+  contextTypes: {
+    onSetTitle: React.PropTypes.func.isRequired,
+  },
+  componentDidMount() {
+    this.context.onSetTitle('MysqlPortalV1');
+  },
   async componentWillMount() {
     const appInfo = await fetch('/v1/app/info');
-    this.setState({ appInfo });
+    this.setState({appInfo});
     const nodeInfo = await fetch('/v1/node/info');
-    this.setState({ nodeInfo });
+    this.setState({nodeInfo});
     debug('load', appInfo, nodeInfo);
   },
 
@@ -36,7 +41,7 @@ const MysqlPortalV1 = React.createClass({
       return;
     }
 
-    this.setState({ tabIndex });
+    this.setState({tabIndex});
   },
 
   render() {
