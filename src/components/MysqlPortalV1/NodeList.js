@@ -11,7 +11,7 @@ const NodeList = React.createClass({
   render() {
     const { appInfo, nodeInfo } = this.props;
     const hit = <span className="fa fa-cog fa-spin text-success"></span>;
-    const tbody = _.map(appInfo.exports, (v, key) => ({ ...v, key })).map(v => {
+    const tbody = _.map(appInfo.exports, (v, key) => ({...v, key})).map(v => {
       const key = v.key.split('.').splice(-1)[0];
       return (
         <tr key={v.key}>
@@ -24,7 +24,7 @@ const NodeList = React.createClass({
       );
     });
 
-    const tbody2 = _.map(nodeInfo, (v, key) => ({ ...v, key })).map(v => {
+    const tbody2 = _.map(nodeInfo, (v, key) => ({...v, key})).map(v => {
       const key = v.key;
       return (
         <tr key={v.key}>

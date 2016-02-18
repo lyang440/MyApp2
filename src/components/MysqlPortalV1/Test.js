@@ -8,7 +8,7 @@ import Alert from './components/Alert.js';
 
 export default React.createClass({
   getInitialState() {
-    return { alert: false };
+    return {alert: false};
   },
 
   async testConfirm() {
@@ -25,7 +25,7 @@ export default React.createClass({
 
   async testAlert() {
     debug('testAlert');
-    this.setState({ alert: !this.state.alert });
+    this.setState({alert: !this.state.alert});
   },
 
   render() {
