@@ -5,14 +5,13 @@ import Growl from './components/Growl.js';
 import Confirm from './components/Confirm.js';
 import NProgress from './components/Nprogress.js';
 import Alert from './components/Alert.js';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 import css from './Test.less';
 import jade from './Test.jade';
 
-const Test = jade.main({css});
 
-
-export default React.createClass({
+const Test = React.createClass({
   getInitialState() {
     return {alert: false};
   },
@@ -35,6 +34,8 @@ export default React.createClass({
   },
 
   render() {
+    const test = jade.test4({css});
+
     return (
       <div>
         <ButtonGroup>
@@ -68,9 +69,11 @@ export default React.createClass({
                onSave={() => Growl('onSave') + this.testAlert()}
         />
         <div>
-          {Test}
+          {test}
         </div>
       </div>
     );
   },
 });
+
+export default withStyles(Test, css);

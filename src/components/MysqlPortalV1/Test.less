@@ -1,11 +1,89 @@
-.root :global{
-  .test{
-    td{
+.root :global {
+  .test {
+    td {
       padding: 15px 10px;
       vertical-align: middle;
     }
-    a{
+    a {
       font-weight: 600;
     }
   }
+}
+
+@size: 40px;
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test2 :global {
+  .timeline {
+
+    .item {
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: center;
+      .left {
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .date{
+
+        }
+        .time {
+          color: #1ab394;
+        }
+      }
+
+      .content {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        border-left: 1px solid #e7eaec;
+        border-top: 1px solid #e7eaec;
+        &:hover {
+          background: #f6f6f6;
+        }
+      }
+    }
+  }
+}
+
+.test3 :global {
+  height: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f4;
+  .t404{
+    //height: 40+20++187px;
+    width: 400px;
+    color:rgba(0,0,0,0.75);
+    .head{
+      margin-top: 40+20px;
+      font-size: 170px;
+      text-align: center;
+      line-height: 1;
+    }
+    .title{
+      font-weight: 600;
+      text-align: center;
+    }
+    .content{
+      text-align: center;
+    }
+  }
+
+}
+
+
+.test4 :global {
 }
